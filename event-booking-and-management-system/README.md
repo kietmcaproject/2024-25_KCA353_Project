@@ -18,7 +18,8 @@ npm install express mongoose dotenv bcryptjs jsonwebtoken cors
 npm instal axios react-redux redux react-router-dom
 
 # Development Tools
-npm install --save-dev nodemon edlint prettier
+npm install --save-dev nodemon edlint prettier 
+```
 
 
 
@@ -45,7 +46,7 @@ root/
 ├── .env                              // Environment variables
 ├── README.md                         // Project documentation
 └── package.json                      // Dependencies and scripts
-
+```
 
 
 // Installation Instructions
@@ -65,7 +66,7 @@ cd ../frontend
 
 # Install frontend dependencies
 npm install
-
+```
 
 
 // Starting the Application
@@ -78,3 +79,4 @@ npm run dev
 # Frontend - Run on http://localhost:3000
 cd frontend
 npm start
+```
