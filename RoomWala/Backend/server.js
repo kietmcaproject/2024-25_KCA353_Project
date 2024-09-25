@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send(`<h1>Hell ${req.ip}, welcome to the Roomwala Backend Server!</h1>`); 
+    res.send(`<h1>Hello ${req.ip}, welcome to the Roomwala Backend Server!</h1>`); 
     });
 
 app.listen(port, () => {
