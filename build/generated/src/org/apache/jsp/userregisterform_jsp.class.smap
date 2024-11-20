@@ -1,0 +1,24 @@
+SMAP
+userregisterform_jsp.java
+JSP
+*S JSP
+*F
++ 0 userregisterform.jsp
+userregisterform.jsp
++ 1 top.jsp
+top.jsp
++ 2 footer.jsp
+footer.jsp
+*L
+1,7:51
+1#1,36:58
+7#0,4:94
+11,23:99
+33,2:122
+35,20:125
+54,25:145
+79:170,3
+80,92:173
+1#2,396:265
+171#0,3:661
+*E
