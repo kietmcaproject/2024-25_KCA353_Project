@@ -1,0 +1,31 @@
+/* AllCustomers.css */
+.all-customers {
+    padding: 20px;
+    color: rgb(119, 114, 114);
+    font-weight: bold;
+  }
+  
+  .customer-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .customer-item p {
+    margin: 0 0 10px;
+  }
+  
+  .customer-item button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .customer-item button:hover {
+    background-color: #ddd;
+  }
+  

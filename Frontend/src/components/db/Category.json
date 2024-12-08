@@ -1,0 +1,91 @@
+{
+    "mens": [
+      {
+        "id": 1,
+        "name": "Shoe",
+        "image": "https://example.com/images/mens-sneakers.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Sneekers",
+        "image": "https://example.com/images/mens-formal-shoes.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Sandals",
+        "image": "https://example.com/images/mens-sandals.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Boots",
+        "image": "https://example.com/images/mens-boots.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Slippers",
+        "image": "https://example.com/images/mens-slippers.jpg"
+      }
+    ],
+    "womens": [
+      {
+        "id": 1,
+        "name": "Heels",
+        "image": "https://example.com/images/womens-heels.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Flats",
+        "image": "https://example.com/images/womens-flats.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Sandals",
+        "image": "https://example.com/images/womens-sandals.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Boots",
+        "image": "https://example.com/images/womens-boots.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Sneakers",
+        "image": "https://example.com/images/womens-sneakers.jpg"
+      }
+    ],
+    "kids": [
+      {
+        "id": 1,
+        "name": "Sneakers",
+        "image": "https://example.com/images/kids-sneakers.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Sandals",
+        "image": "https://example.com/images/kids-sandals.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Boots",
+        "image": "https://example.com/images/kids-boots.jpg"
+      },
+      {
+        "id": 4,
+        "name": "School Shoes",
+        "image": "https://example.com/images/kids-school-shoes.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Slippers",
+        "image": "https://example.com/images/kids-slippers.jpg"
+      }
+    ],
+    "Paragon":[
+      {
+        "id":1,
+        "name":""
+      }
+
+    ]
+  }
+  

@@ -1,0 +1,40 @@
+/* PendingOrders.css */
+.pending-orders {
+    padding: 20px;
+    color:#36454f;
+  }
+  
+  .customer-orders {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .order-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color:#36454f
+    
+  }
+  .order-item-details{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .order-item button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .order-item button:hover {
+    background-color: #ddd;
+  }
+  

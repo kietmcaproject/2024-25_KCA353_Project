@@ -1,0 +1,91 @@
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 300px; /* Optional: Set a max-width for the card */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+
+.product-name {
+    font-size: 1.2em;
+    
+}
+
+.product-brand {
+    color: #666;
+}
+
+
+
+.product-mrp {
+    color: #ff0000;
+    margin-right: 8px;
+}
+
+
+.product-sizes .product-material .product-gender {
+    font-size: 0.9em;
+    color: #000;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .product-card {
+        max-width: 100%;
+        
+    }
+}
+
+.product-image-gallery {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+    scroll-snap-type: x mandatory; /* Optional: for snapping behavior */
+}
+
+.product-image-gallery::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+}
+.product-image-gallery::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.product-image-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-image {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: 80%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    scroll-snap-align: start; 
+}
+.color-button {
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .color-button.selected {
+    border: 2px solid black;
+  }
+  
