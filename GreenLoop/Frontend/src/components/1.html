@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Product Images</title>
+</head>
+<body>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <!-- Primary Images input (allowing multiple files) -->
+    <label for="primaryImages">Primary Images:</label>
+    <input type="file" id="primaryImages" name="primaryImages" multiple>
+    <br><br>
+
+    <!-- Dynamic section to add colors and their corresponding images -->
+    <div id="colorImagesContainer">
+      <label for="colorName">Color Name:</label>
+      <input type="text" id="colorName" placeholder="Enter color name">
+      <input type="file" id="colorImage" multiple>
+      <button type="button" id="addColorButton">Add Color Images</button>
+    </div>
+
+    <div id="colorImageList"></div>
+
+    <br>
+    <button type="submit">Upload Product</button>
+  </form>
+
+  <script>
+    const colorImagesContainer = document.getElementById('colorImagesContainer');
+    const colorImageList = document.getElementById('colorImageList');
+    let colorImagesData = {}; // Object to store color-based images
+
+    // Add color images dynamically
+    document.getElementById('addColorButton').addEventListener('click', function () {
+      const colorName = document.getElementById('colorName').value.trim();
+      const colorImageFiles = document.getElementById('colorImage').files;
+
+      if (colorName === '' || colorImageFiles.length === 0) {
+        alert('Please provide both a color name and at least one image');
+        return;
+      }
+
+      if (!colorImagesData[colorName]) {
+        colorImagesData[colorName] = [];
+      }
+
+      // Add selected images to the color entry
+      for (let i = 0; i < colorImageFiles.length; i++) {
+        colorImagesData[colorName].push(colorImageFiles[i].name);
+      }
+
+      // Display added color and images
+      const colorItem = document.createElement('div');
+      colorItem.textContent = Color: ${colorName}, Images: ${Array.from(colorImageFiles).map(file => file.name).join(', ')};
+      colorImageList.appendChild(colorItem);
+
+      // Reset inputs for next color entry
+      document.getElementById('colorName').value = '';
+      document.getElementById('colorImage').value = '';
+    });
+
+    // Handle form submission
+    const uploadForm = document.getElementById('uploadForm');
+    uploadForm.addEventListener('submit', async function (event) {
+      event.preventDefault(); // Prevent page reload
+
+      const formData = new FormData();
+
+      // Handle primary images
+      const primaryImagesInput = document.getElementById('primaryImages').files;
+      const primaryImagesArray = [];
+      for (let i = 0; i < primaryImagesInput.length; i++) {
+        primaryImagesArray.push(primaryImagesInput[i].name);
+        formData.append('primaryImages', primaryImagesInput[i]); // Append files to FormData
+      }
+
+      // Append color images dynamically based on the colorImagesData object
+      for (const color in colorImagesData) {
+        const colorFiles = colorImagesData[color];
+        for (let i = 0; i < colorFiles.length; i++) {
+          formData.append(colorImages[${color}], colorFiles[i]); // Attach images under dynamic color keys
+        }
+      }
+
+      // Append primary images array and color images object as JSON
+      formData.append('primaryImages', JSON.stringify(primaryImagesArray));
+      formData.append('colorImages', JSON.stringify(colorImagesData));
+
+      try {
+        const response = await axios.post(
+          'https://greenloop-nw0w.onrender.com/api/v1/upload-img',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+
+        console.log('Upload successful:', response.data);
+      } catch (error) {
+        console.error('Error uploading images and data:', error.response ? error.response.data : error.message);
+      }
+    });
+  </script>
+
+  <!-- Import Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.brand-cont{
+  background-color: white;
+}
+.brand-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    scroll-behavior: smooth;
+    color: rgb(221, 32, 44);
+    font-weight: bold;
+  }
+  h3{
+    color: rgb(221, 32, 44);
+    padding-left: 10px;
+  }
+  .brand-card {
+    flex: 0 0 auto;
+    margin-right: 15px;
+    text-align: center;
+  }
+  
+  .brand-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .brand-card p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
