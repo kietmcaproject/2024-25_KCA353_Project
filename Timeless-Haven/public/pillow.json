@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Pillow",
+    "image": "/p1.webp",
+    "price": 299
+  },
+  {
+    "id": 2,
+    "title": "pillow",
+    "image": "/p2.webp",
+    "price": 399
+  },
+  {
+    "id": 3,
+    "title": "pillow",
+    "image": "/p3.webp",
+    "price": 499
+  },
+  {
+    "id": 4,
+    "title": "Pillow",
+    "image": "/p4.webp",
+    "price": 599
+  },
+  {
+    "id": 5,
+    "title": "Pillow",
+    "image": "/p5.jpg",
+    "price": 699
+  },
+  {
+    "id": 6,
+    "title": "Pillow",
+    "image": "/p5.webp",
+    "price": 799
+  }
+]

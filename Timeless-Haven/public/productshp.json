@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Hand Print 1",
+    "image": "/hp1.jpg",
+    "price": 399
+  },
+  {
+    "id": 2,
+    "title": "Hand Print 2",
+    "image": "/hp2.jpg",
+    "price": 399
+  },
+  {
+    "id": 3,
+    "title": "Hand Print 3",
+    "image": "/hp3.jpg",
+    "price": 399
+  },
+  {
+    "id": 4,
+    "title": "Hand print 4",
+    "image": "/hp4.jpg",
+    "price": 399
+  },
+  {
+    "id": 5,
+    "title": "Hand Print 5",
+    "image": "/hp5.jpg",
+    "price": 499
+  },
+  {
+    "id": 6,
+    "title": "Hand Print 6",
+    "image": "/hp6.jpg",
+    "price": 499
+  }
+]

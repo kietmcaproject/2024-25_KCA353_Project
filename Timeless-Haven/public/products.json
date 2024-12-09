@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Cotton Bedsheet",
+    "image": "/img5.jpg",
+    "price": 599
+  },
+  {
+    "id": 2,
+    "title": "Velvet Bedsheet",
+    "image": "/Velvet new _page-0003.jpg",
+    "price": 599
+  },
+  {
+    "id": 3,
+    "title": "Printed Bedsheet",
+    "image": "/hp1.jpg",
+    "price": 399
+  },
+  {
+    "id": 4,
+    "title": "Cotton Mix",
+    "image": "/img19.jpg",
+    "price": 599
+  },
+  {
+    "id": 5,
+    "title": "Pillow",
+    "image": "/p1.webp",
+    "price": 399
+  },
+  {
+    "id": 6,
+    "title": "Pillow",
+    "image": "/p5.jpg",
+    "price": 199
+  },
+  {
+    "id": 7,
+    "title": "Pillow",
+    "image": "/p5.webp",
+    "price": 399
+  },
+  {
+    "id": 8,
+    "title": "Pillow",
+    "image": "/p4.webp",
+    "price": 299
+  },
+  {
+    "id": 9,
+    "title": "Blanket",
+    "image": "/bt4.jpg",
+    "price": 1200
+  },
+  {
+    "id": 10,
+    "title": "Blanket",
+    "image": "/bt3.jpg",
+    "price": 1600
+  },
+  {
+    "id": 11,
+    "title": "Blanket",
+    "image": "/bt2.jpg",
+    "price": 1400
+  },
+  {
+    "id": 12,
+    "title": "Blanket",
+    "image": "/bt1.jpg",
+    "price": 1500
+  }
+]
