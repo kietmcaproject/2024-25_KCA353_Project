@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Velvet Bedsheet",
+    "image": "/Velvet new _page-0001.jpg",
+    "price": 699
+  },
+  {
+    "id": 2,
+    "title": "Velvet Bedsheet",
+    "image": "/Velvet new _page-0003.jpg",
+    "price": 699
+  },
+  {
+    "id": 3,
+    "title": "Velvet Bedsheet",
+    "image": "/Velvet new _page-0004.jpg",
+    "price": 799
+  },
+  {
+    "id": 4,
+    "title": "Velvet Bedsheet",
+    "image": "/Velvet new _page-0005.jpg",
+    "price": 599
+  },
+  {
+    "id": 5,
+    "title": "Cotton Bedsheet",
+    "image": "/img23.jpg",
+    "price": 499
+  },
+  {
+    "id": 6,
+    "title": "Cotton Bedsheet",
+    "image": "/img27.jpg",
+    "price": 799
+  }
+]
