@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "userId":"1200",
+      "name": "Abhya Ahuja",
+      "password": "abhya",
+      "role": "student",
+      "department": "MCA",
+      "rollNumber":"4",
+      "hostel":"Saraswati"
+    },
+    {
+      "id": 2,
+      "userId":"1210",
+      "name": "akansha",
+      "password": "akansha",
+      "role": "warden"
+
+    },
+    {
+      "id": 3,
+      "userId":"1220",
+      "name": "anshika",
+      "password": "anshika",
+      "role": "guard"
+    },
+    {
+      "id": 4,
+      "userId":"1230",
+      "name": "aradhya",
+      "password": "aradhya",
+      "role": "hod",
+      "department": "MCA"
+    },
+    {
+      "id": 5,
+      "userId":"1240",
+      "name": "neha",
+      "password": "neha",
+      "role": "hod",
+      "department": "CS"
+    },
+    {
+      "id": 6,
+      "userId":"1250",
+      "name": "sara",
+      "password": "sara",
+      "role": "student",
+      "department": "CS",
+      "hostel":"Gargi"
+    },
+    {
+      "id": 7,
+      "userId":"1260",
+      "name": "Amita Garg",
+      "password": "amita",
+      "role": "student",
+      "department": "MCA",
+      "hostel":"Saraswati"
+    },
+    
+    {
+      "id": 8,
+      "userId":"1270",
+      "name": "Mehak",
+      "password": "mehak",
+      "role": "student",
+      "department": "MCA",
+      "hostel":"Saraswati"
+    }
+  ]
+  
