@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web.css') }}">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4 py-3 shadow-sm">
+    <a class="navbar-brand" href="#">
+        <div class="circle-logo"></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2">
+                <!-- About button triggers the modal -->
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">About</a>
+            </li>
+
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#featuresModal">Features</a>
+              </li>
+              <li class="nav-item mx-2"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+
+        </ul>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search">
+        <button id="searchButton"><i class="fas fa-search"></i></button>
+    </div>
+
+</nav>
+
+<!-- Modal -->
+  
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="background: #3a3f51; color: #fff;">
+                <h1 class="modal-title fs-5 text-center w-100" id="staticBackdropLabel">ABOUT</h1>            </div>
+            <div class="modal-body about-modal-body">
+                <!-- Left Side: Theory Section -->
+                <div class="about-theory">
+                    <p>
+                        <strong>Algorithm Work:</strong>  
+                        Dive into the mechanisms behind our algorithms. Each search method—DFS, DLS, and BFS—offers unique advantages, efficiently exploring and solving complex pathways. Whether seeking depth, flexibility, or breadth, our approach ensures precision in navigating through intricate networks.
+                    </p>
+                </div>
+
+                <!-- Right Side: Image Section -->
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/about.webp') }}" alt="Algorithm Illustration" class="card2-image">
+                </div>
+            </div>
+            <div class="modal-footer" style="background: #f5f7fa;">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Features Modal -->
+<div class="modal fade" id="featuresModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center w-100" id="featuresModalLabel">FEATURES</h1>
+        </div>
+        <div class="modal-body about-modal-body">
+          <!-- Left Side: Features Text -->
+          <div class="about-theory">
+            <p><strong>Pathfinder Features:</strong> Explore the capabilities of algorithms such as DFS, DLS, and BFS. These tools provide efficient navigation through complex networks, offering flexibility and scalability for diverse applications. From solving mazes to advanced robotics, they ensure precision and reliability in finding optimal paths.</p>
+          </div>
+  
+          <!-- Right Side: Features Image -->
+          <div class="about-image">
+            <img src="{{ url_for('static', filename='images/features.webp') }}" alt="Features Illustration" class="card2-image">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+
+    <!-- Header -->
+<div class="header">
+    <h1>Pathfinder Pro</h1>
+    <div class="typing-container">
+        <span id="typing-effect" class="typing-effect">Exploring the shortest paths...</span>
+        <span id="console" class="console-underscore">|</span>
+    </div>
+</div>
+
+    
+
+<div class="carousel-container">
+    <div class="carousel" id="carousel">
+        <div class="carousel-item">
+            <div class="image"></div>
+            <div class="content">
+                <h5>Connecting Tomorrow</h5>
+                <h1>Exploring Paths and Solutions</h1>
+                <p> Explore intelligent search techniques with algorithms, mastering pathfinding, optimization, and problem-solving in complex networks and graphs</p>
+               
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    <br>
+    <br>
+  
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="card">
+            <h2>Breadth-First search</h2>
+            <p>An algorithm that starts traversing the graph from the root node and explores all the neighboring nodes.</p>
+            <a href="{{ url_for('bfs') }}" class="card-btn">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Depth-First search</h2>
+            <p>An algorithm that explores as far as possible along each branch before backtracking.</p>
+            <a href="{{ url_for('dfs') }}" class="card-btn">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Depth-Limit search</h2>
+            <p>A graph traversal algorithm that searches nodes up to a set depth, conserving memory efficiently.</p>
+            <a href="{{ url_for('dls') }}" class="card-btn">Read More</a>
+        </div>
+    </section>
+    
+
+
+    <section class="content2">
+        <div class="card2">
+            <img src="{{ url_for('static', filename='images/header.jpeg') }}" alt="Desert2 Image" class="card2-image">
+            <div class="card2-content">
+                <p class="location2">VISUALIZER</p>
+                <h2 class="title2">Unforgettable Journey into the Desert</h2>
+                <p class="description2">Travel with us and you will get a unique experience.</p>
+                <a href="{{ url_for('visiual') }}"> <button class="learn2-more">Click Here</button></a>
+            </div>
+        </div>
+        
+        <div class="details2">
+            <h2>VISUALIZE YOUR ALGORITHM</h2>
+            <p>The digital frontier, driven by algorithms, harmonizes human intention with machine precision, transforming our behaviors into pathways for tailored exploration</p>
+        </div>
+        
+    </section>
+
+
+  
+
+    <section id="programs" class="content-section" style="background-color: #ebdef0 ; color:black ; max-width: 100%; margin: 70px; text-align: center; padding: 20px; border-radius:20px">
+        <h2>Our Goals</h2>
+        <br>
+        <div class="programs-grid">
+            <div class="program">
+                <h3>Early Goal</h3>
+                <p>Building strong foundations for lifelong learning.</p>
+            </div>
+            <div class="program">
+                <h3>Primary Goal</h3>
+                <p>Engaging everyone in interactive, meaningful learning.</p>
+            </div>
+            <div class="program">
+                <h3>Secondary Goal</h3>
+                <p>Preparing young adults for higher education and careers.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer" >
+        <div class="footer-container">
+            <div class="footer-branding">
+                <h1>Pathfinder Pro</h1>
+                <p>Visualizer helps to visualize the shortest path</p>
+               
+            </div>
+            <div class="footer-touch">
+                <h3>Get in Touch</h3>
+                <p>Mon-Fri, 10AM - 6PM</p>
+                <ul>
+                    <li class="nav-item mx-2"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Instagram</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-mailing">
+                <h3>Join Our Mailing List</h3>
+                <form style="border-radius:20%">
+                    <input type="text" placeholder="First Name">
+                    <input type="email" placeholder="Email">
+                    <a href="{{ url_for('subscribe') }}"><button type="button">Subscribe</button></a>
+
+                </form>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                // Redirect to a search page or URL with the query as a parameter
+                window.location.href = `/search?query=${encodeURIComponent(query)}`;
+            } else {
+                alert('Suggestions: bfs, dfs, dls, visualizer'); 
+            }
+        });
+        
+
+
+
+// Typing Effect
+
+    const consoleText = (words, id, colors) => {
+        if (colors === undefined) colors = ["#FF0000"];
+        let visible = true;
+        const con = document.getElementById("console");
+        let letterCount = 1;
+        let x = 1;
+        let waiting = false;
+        const target = document.getElementById(id);
+        target.setAttribute("style", "color:" + colors[0]);
+        
+        window.setInterval(() => {
+            if (letterCount === 0 && waiting === false) {
+                waiting = true;
+                target.innerHTML = words[0].substring(0, letterCount);
+                window.setTimeout(() => {
+                    const usedColor = colors.shift();
+                    colors.push(usedColor);
+                    const usedWord = words.shift();
+                    words.push(usedWord);
+                    x = 1;
+                    target.setAttribute("style", "color:" + colors[0]);
+                    letterCount += x;
+                    waiting = false;
+                }, 1000);
+            } else if (letterCount === words[0].length + 1 && waiting === false) {
+                waiting = true;
+                window.setTimeout(() => {
+                    x = -1;
+                    letterCount += x;
+                    waiting = false;
+                }, 1000);
+            } else if (waiting === false) {
+                target.innerHTML = words[0].substring(0, letterCount);
+                letterCount += x;
+            }
+        }, 120);
+        
+        window.setInterval(() => {
+            if (visible === true) {
+                con.className = "console-underscore hidden";
+                visible = false;
+            } else {
+                con.className = "console-underscore";
+                visible = true;
+            }
+        }, 400);
+    };
+
+    consoleText(["Pathfind with Ease", "Navigate effortlessly", "Uncover the Optimal Path"], "typing-effect", ["#d7bde2", "#a3e4d7", "#fad7a0"]);
+
+
+
+
+
+   
+    </script>
+</body>
+</html>

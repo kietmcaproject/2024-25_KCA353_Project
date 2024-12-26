@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theory.css') }}">
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <!-- Social Media Icons -->
+            <div class="social-media-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+            <div class="logo">
+                <a href="#">
+                    <div class="circle-logo"></div>
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#featuresModal">Features</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #3a3f51; color: #fff;">
+                    <h1 class="modal-title fs-5 text-center w-100" id="aboutModalLabel">ABOUT</h1>
+                </div>
+                <div class="modal-body about-modal-body">
+                    <!-- Left Side: Theory Section -->
+                    <div class="about-theory">
+                        <p>
+                            <strong>Algorithm Work:</strong>  
+                            Dive into the mechanisms behind our algorithms. Each search method—DFS, DLS, and BFS—offers unique advantages, efficiently exploring and solving complex pathways. Whether seeking depth, flexibility, or breadth, our approach ensures precision in navigating through intricate networks.
+                        </p>
+                    </div>
+
+                    <!-- Right Side: Image Section -->
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='images/about.webp') }}" alt="Algorithm Illustration" class="card2-image">
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #f5f7fa;">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Modal -->
+    <div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #3a3f51; color: #fff;">
+                    <h1 class="modal-title fs-5 text-center w-100" id="featuresModalLabel">FEATURES</h1>
+                </div>
+                <div class="modal-body about-modal-body">
+                    <!-- Left Side: Features Text -->
+                    <div class="about-theory">
+                        <p><strong>Pathfinder Features:</strong> Explore the capabilities of algorithms such as DFS, DLS, and BFS. These tools provide efficient navigation through complex networks, offering flexibility and scalability for diverse applications. From solving mazes to advanced robotics, they ensure precision and reliability in finding optimal paths.</p>
+                    </div>
+
+                    <!-- Right Side: Features Image -->
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='images/features.webp') }}" alt="Features Illustration" class="card2-image">
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #f5f7fa;">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main header content -->
+    <div class="header">
+        <h1>Depth-Limited Search (DLS)</h1>
+        <p style="text-align: center;" !Important></p>
+        A search algorithm that explores paths up to a fixed depth, useful for reaching specific target nodes.
+    </div>
+
+    <!-- Sidebar navigation -->
+    <div class="container" style="background-color: #d6dbdf; margin-Left:10px">
+        <aside class="sidebar" style="background-color: #aeb6bf;">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#algorithm">Algorithm</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pseudocode">Pseudocode</a></li>
+                <li><a href="#diagram">Diagram</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+                <li><a href="#limitations">Limitations</a></li>
+                <li><a href="#variants">Variants</a></li>
+                <li><a href="#comparison">Comparison with Other Algorithms</a></li>
+                <li><a href="#real-world-examples">Real-World Examples</a></li>
+                <li><a href="#implementation">Implementation in Programming Languages</a></li>
+                <li><a href="#future-improvements">Future Improvements</a></li>
+            </ul>
+        </aside>
+    
+
+
+        <!-- Main content -->
+        <main>
+            <section id="introduction">
+                <h2>Introduction to Depth Limit Search</h2>
+                <p>
+                    Depth-Limited Search (DLS) is a pathfinding and graph traversal algorithm known for its memory efficiency. By imposing a depth limit, DLS avoids excessive exploration in potentially infinite graphs, making it suitable for deep search spaces.
+                </p>
+                <p>
+                    DLS operates by exploring paths only up to a specified depth, limiting memory usage compared to algorithms that search the entire graph. It maintains a stack of nodes up to the set depth, ensuring that deeper nodes are not considered, which can help focus the search.
+                </p>
+                <p>
+                    DLS applies to both directed and undirected graphs, selectively exploring nodes (vertices) connected by edges within the defined depth. Starting from an initial node, it recursively explores neighboring nodes, respecting the depth constraint to prevent unbounded exploration.
+                </p>
+                <p>
+                    A key feature of DLS is its **depth limit**, which varies depending on the problem requirements. By adjusting the depth limit, DLS can balance search thoroughness with memory efficiency, making it useful in search scenarios where reaching certain depths is critical.
+                </p>
+                <p>
+                    DLS has a time complexity of O(b^l), where `b` is the branching factor and `l` is the depth limit. Its efficiency largely depends on the appropriateness of the depth limit, as an optimal limit can reduce the number of nodes visited and improve search performance.
+                </p>
+                <p>
+                    One of DLS's strengths is its applicability to specific problem domains, particularly in scenarios where deep exploration is required but memory resources are limited. DLS is often used in applications such as constraint satisfaction problems and scenarios requiring limited-depth exploration.
+                </p>
+                <p>
+                    Unlike algorithms focused on finding the shortest path, DLS does not guarantee optimal paths in weighted graphs, as it may terminate once the depth limit is reached. This constraint makes it more suitable for problems where depth-constrained exploration is adequate.
+                </p>
+                <p>
+                    However, DLS has limitations. Its **incompleteness** is a drawback, as it may miss solutions if they lie beyond the specified depth limit. This characteristic can make it less efficient for searches requiring a guarantee of solution discovery. Despite this, DLS remains a useful tool in search strategy discussions, offering insights into depth-limited techniques and resource-conserving search methods.
+                </p>
+                
+            </section>
+            
+            <section id="history">
+                <h2>History</h2>
+                <p>
+                    Depth-Limited Search (DLS) was introduced as a variant of Depth-First Search (DFS), aiming to limit the depth of search in large or infinite graphs. It emerged from the need to control memory usage while still exploring deep into a graph, especially in cases where excessive memory consumption was a concern.
+                    <br><br>
+                    DLS builds on the principles of DFS, adding the concept of a depth limit to prevent unbounded exploration. This constraint allows for more manageable search space, making it useful in scenarios where it’s crucial to search within a specific depth range. DLS influenced the development of several algorithms designed to handle resource-constrained search spaces.
+                    <br><br>
+                    Over time, DLS has been applied in various fields, including artificial intelligence and puzzle-solving, where a bounded exploration of state spaces is required. While the core principles of DLS have remained largely unchanged, ongoing research continues to explore its applications in more efficient resource-limited search algorithms.
+                </p>
+            </section>
+            
+            <section id="algorithm">
+                <h2>Algorithm</h2>
+                <p>
+                    The theory behind DLS emphasizes depth-constrained pathfinding in graphs, combining the basic principles of Depth-First Search with a limit on the maximum depth. This restriction helps control the exploration of nodes, ensuring the search does not go beyond the specified depth limit.
+                    <br><br>
+                    In computational theory, DLS's **correctness** is ensured by its systematic exploration of nodes up to the given depth, but unlike , it does not use heuristic functions. Its primary feature is limiting depth to conserve memory and prevent exhaustive exploration.
+                    <br><br>
+                    DLS's efficiency is evaluated using **Big O notation**, with time complexity O(b^l), where `b` is the branching factor and `l` is the depth limit. The space complexity remains manageable because the search space is constrained to the depth limit, making it suitable for scenarios with limited memory resources.
+                    <br><br>
+                    The Depth-Limited Search algorithm continues to be valuable in computational design, offering insights into managing search spaces by limiting exploration depth.
+                </p>
+            </section>
+            
+            <section id="how-it-works">
+                <h2>How It Works</h2>
+            
+                <ol>
+                    <li><strong>Initialization:</strong> DLS begins with a source node and a predefined depth limit, ensuring the search does not exceed this limit.</li>
+                    <li><strong>Depth Limit Check:</strong> As nodes are added to the stack, DLS checks whether the current depth is within the specified limit.</li>
+                    <li><strong>Exploration Process:</strong> DLS removes the node from the stack, explores its unvisited neighbors, and continues until the depth limit is reached.</li>
+                    <li><strong>Path Evaluation:</strong> For each neighbor, DLS updates the path if the new path is found within the depth limit, ensuring the search stays within bounds.</li>
+                    <li><strong>Termination:</strong> The algorithm terminates when the goal node is found or when the depth limit is reached, ensuring no further nodes are explored beyond the defined depth.</li>
+                </ol>
+            
+                <h4>Example Visualization</h4>
+                <p>DLS can be visualized as a search exploring a tree, expanding nodes until the defined depth limit is reached, ensuring no further nodes are explored beyond that limit.</p>
+            </section>
+            
+            <section id="pseudocode">
+                <h2>Pseudocode</h2>
+                <pre><code>
+                function DLS(Graph, start, goal, limit):
+                    create stack S
+                    mark start as visited
+                    S.push(start, 0)
+                
+                    while S is not empty:
+                        current = S.pop()
+                        if current == goal:
+                            return reconstruct_path(current)
+                        if depth(current) < limit:
+                            for each neighbor in neighbors(current):
+                                S.push(neighbor, depth(current) + 1)
+                    return failure
+                </code></pre>
+            </section>
+            
+            <section id="diagram">
+                <h2>Diagram</h2>
+                <p>Visual representation of the algorithm in action.</p>
+                <img src="{{ url_for('static', filename='images/dls.jpg') }}" alt="DLS Algorithm Diagram">
+                
+            </section>
+
+            <section id="applications">
+                <h2>Applications</h2>
+                <ul>
+                    <li><strong>Pathfinding in Games:</strong> DLS is used in games with constrained exploration, particularly where limited depth searches are sufficient.</li>
+                    <li><strong>Robotics Navigation:</strong> DLS helps robots navigate environments when memory constraints limit the depth of the search space.</li>
+                    <li><strong>Geographic Information Systems (GIS):</strong> DLS can be used in GIS applications where depth-constrained searches are necessary for local routing.</li>
+                    <li><strong>Network Routing:</strong> DLS can optimize routing in networks with limited resources, especially in situations where only partial exploration is needed.</li>
+                    <li><strong>AI Decision-Making:</strong> DLS is used in AI for decision-making where bounded search spaces are necessary to maintain efficiency.</li>
+                    <li><strong>Urban Planning:</strong> DLS helps in urban planning when limited exploration depth is required for quick simulations.</li>
+                    <li><strong>Drone Pathfinding:</strong> DLS is implemented in drone navigation systems where limited exploration depth reduces computational overhead.</li>
+                    <li><strong>Autonomous Vehicles:</strong> DLS aids autonomous vehicles in dynamic environments where limiting the search depth ensures faster responses.</li>
+                    <li><strong>Supply Chain Optimization:</strong> DLS is used in logistics for route optimization with limited resources to avoid exhaustive search scenarios.</li>
+                    <li><strong>Recommendation Systems:</strong> DLS can explore recommendation graphs with a controlled depth, improving user experience with manageable search spaces.</li>
+                </ul>
+            </section>
+            
+            <section id="complexity-analysis">
+                <h2>Complexity Analysis</h2>
+            
+                <ul>
+                    <li><strong>Time Complexity:</strong> The time complexity of DLS is <code>O(b^l)</code>, where:
+                        <ul>
+                            <li><code>b</code> is the branching factor, and <code>l</code> is the depth limit.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Explanation:</strong> DLS explores nodes based on depth, and the time complexity increases exponentially with higher branching factors and deeper limits.</li>
+            
+                    <li><strong>Space Complexity:</strong> The space complexity is <code>O(b * l)</code> for the stack used to manage the search.
+                        <ul>
+                            <li>DLS uses a stack to manage nodes up to the given depth limit, requiring <code>O(b * l)</code> space.</li>
+                            <li>Additionally, an adjacency list or matrix to represent edges requires <code>O(E)</code> space.</li>
+                        </ul>
+                    </li>
+            
+                    <li><strong>Worst Case Scenario:</strong> In graphs with high branching factors, DLS may explore many nodes within the depth limit, leading to longer runtimes.</li>
+            
+                    <li><strong>Optimized for Shallow Graphs:</strong> DLS performs efficiently when the depth limit is small, especially when dealing with shallow or moderately connected graphs.</li>
+            
+                    <li><strong>Applicability:</strong> Given its complexity, DLS is well-suited for applications where the search space can be constrained by a depth limit, such as puzzle-solving or scenarios with resource limitations.</li>
+                </ul>
+            </section>
+            
+            <section id="limitations">
+                <h2>Limitations</h2>
+                <ul>
+                    <li><strong>Depth Limitation:</strong> The depth limit may prevent DLS from finding a solution if the goal is located beyond the defined depth.</li>
+            
+                    <li><strong>Heuristic Independence:</strong> DLS does not use a heuristic to guide the search, which can lead to less efficient exploration compared to heuristic-based algorithms.</li>
+            
+                    <li><strong>High Memory Usage:</strong> DLS can still consume significant memory for deep graphs, as it must maintain a stack for all visited nodes up to the depth limit.</li>
+            
+                    <li><strong>Inefficient for Wide Graphs:</strong> In graphs with high branching factors, DLS can become inefficient, as the search explores many nodes without guaranteed optimality.</li>
+            
+                    <li><strong>Not Always Optimal:</strong> DLS may not guarantee the shortest path since it does not explore all possible paths to the goal, especially in deeper levels of the search space.</li>
+            
+                    <li><strong>Limited to Specific Use Cases:</strong> DLS is most useful for constrained depth search tasks and may not be the best choice for all pathfinding or search applications.</li>
+                </ul>
+            </section>
+            
+            <section id="variants">
+                <h2>Variants</h2>
+                <ul>
+                    <li><strong>DLS with Different Depth Limits:</strong> Variants of DLS that utilize different depth limits to control the exploration of the search space.</li>
+                    
+                    <li><strong>Bidirectional DLS:</strong> A variant that performs DLS search from both the start and goal nodes simultaneously, potentially reducing search time.</li>
+                    
+                    <li><strong>Hierarchical DLS:</strong> This variant divides the graph into subgraphs, applying DLS at different levels of abstraction for improved efficiency.</li>
+                    
+                    <li><strong>Multi-Threaded DLS:</strong> DLS implementation that uses multiple threads to explore different branches of the search space concurrently, improving performance for large graphs.</li>
+                    
+                    <li><strong>Weighted DLS:</strong> A variant that incorporates edge weights into the depth-limited search, allowing for more flexible pathfinding in weighted graphs.</li>
+                    
+                    <li><strong>Anytime DLS:</strong> This version of DLS can return a suboptimal solution quickly and then improve it over time, making it useful in time-sensitive search applications.</li>
+                    
+                    <li><strong>Dynamic DLS:</strong> An adaptation of DLS for environments that change over time, allowing the algorithm to adjust its search based on updated information.</li>
+                    
+                    <li><strong>Real-Time DLS:</strong> Optimized for real-time pathfinding, balancing exploration depth and search speed for time-critical applications.</li>
+                    
+                    <li><strong>Hybrid DLS:</strong> Combines DLS with other search algorithms, like DFS or BFS, to leverage strengths from multiple techniques for efficient pathfinding in complex graphs.</li>
+                </ul>
+            </section>
+            
+            <section id="comparison">
+                <h2>Comparison with Other Algorithms</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Type</th>
+                            <th>Time Complexity</th>
+                            <th>Space Complexity</th>
+                            <th>Use Cases</th>
+                            <th>Strengths</th>
+                            <th>Limitations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Breadth-First Search (BFS)</td>
+                            <td>Traversal</td>
+                            <td>O(V + E)</td>
+                            <td>O(V + E)</td>
+                            <td>Shortest path in unweighted graphs, level-order traversal</td>
+                            <td>Finds shortest path in unweighted graphs</td>
+                            <td>Not suitable for weighted graphs, high memory usage</td>
+                        </tr>
+                        <tr>
+                            <td>Depth-First Search (DFS)</td>
+                            <td>Traversal</td>
+                            <td>O(V + E)</td>
+                            <td>O(V)</td>
+                            <td>Pathfinding, topological sorting, cycle detection</td>
+                            <td>Uses less memory than BFS, effective for deep exploration</td>
+                            <td>Does not guarantee shortest path, can get stuck in deep paths</td>
+                        </tr>
+                        <tr>
+                            <td>Depth-Limited Search (DLS)</td>
+                            <td>Pathfinding</td>
+                            <td>O(b^l)</td>
+                            <td>O(b * l)</td>
+                            <td>Search within depth-limited spaces, puzzle-solving</td>
+                            <td>Efficient for constrained searches with limited memory</td>
+                            <td>Not optimal, limited by depth limit, less flexible</td>
+                        </tr>
+                        <tr>
+                            <td>Dijkstra's Algorithm</td>
+                            <td>Shortest Path</td>
+                            <td>O((V + E) log V)</td>
+                            <td>O(V)</td>
+                            <td>Shortest path in weighted graphs</td>
+                            <td>Works with weighted edges, guarantees shortest path</td>
+                            <td>Slower than BFS for unweighted graphs, more complex</td>
+                        </tr>
+                        <tr>
+                            <td>A* Algorithm</td>
+                            <td>Pathfinding</td>
+                            <td>O(E)</td> (in optimal conditions)
+                            <td>O(V)</td>
+                            <td>Heuristic pathfinding, game AI, navigation</td>
+                            <td>Uses heuristics to find paths quickly, guarantees optimality with a good heuristic</td>
+                            <td>Requires a good heuristic, can be complex to implement</td>
+                        </tr>
+                        <tr>
+                            <td>Floyd-Warshall Algorithm</td>
+                            <td>Shortest Path</td>
+                            <td>O(V^3)</td>
+                            <td>O(V^2)</td>
+                            <td>All-pairs shortest paths</td>
+                            <td>Finds shortest paths between all pairs</td>
+                            <td>Not efficient for sparse graphs, high time complexity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="real-world-examples">
+                <h2>Real-World Examples</h2>
+                <h4>GPS Navigation</h4>
+                <p>dls is widely used in GPS navigation systems to determine the most efficient route from one location to another while considering various traffic conditions.</p>
+                
+                <h4>Game Development</h4>
+                <p>In game AI, dls is often used to navigate game maps, enabling characters to find optimal paths toward their objectives.</p>
+                
+                <h4>Robotics Pathfinding</h4>
+                <p>dls can be utilized in robotics for real-time pathfinding, helping robots navigate through complex environments while avoiding obstacles.</p>
+                
+                <h4>Urban Planning</h4>
+                <p>dls is useful in urban planning simulations to identify the most efficient routes for transportation and infrastructure development.</p>
+                
+                <h4>Network Routing</h4>
+                <p>In computer networks, dls can optimize data packet routing, ensuring efficient communication between nodes.</p>
+                
+                <h4>Artificial Intelligence</h4>
+                <p>In AI applications, dls is used for decision-making processes where finding the most effective path or move is crucial.</p>
+                
+                <h4>Supply Chain Optimization</h4>
+                <p>dls assists in logistics by identifying efficient routes for delivery and distribution of goods across networks.</p>
+                
+                <h4>Web Crawling</h4>
+                <p>dls can be applied in web crawlers to find the most relevant pages based on heuristic evaluations, improving data extraction efficiency.</p>
+                
+                <h4>Game AI Navigation</h4>
+                <p>dls helps game characters navigate complex terrains, ensuring optimal pathfinding to enhance gameplay experiences.</p>
+                
+                <h4>Traffic Simulation</h4>
+                <p>dls can simulate traffic flow by evaluating optimal routes for vehicles in real-time based on changing conditions.</p>
+            </section>
+            
+            <section id="implementation">
+                <h2>Implementation in Programming Languages</h2>
+                <pre>
+                    <code>
+                        def dls(graph, start, goal, heuristic):
+                            open_set = {start}
+                            came_from = {}
+                            g_score = {node: float('inf') for node in graph}
+                            g_score[start] = 0
+                            f_score = {node: float('inf') for node in graph}
+                            f_score[start] = heuristic[start}
+                        
+                            while open_set:
+                                current = min(open_set, key=lambda node: f_score[node])
+                                if current == goal:
+                                    return reconstruct_path(came_from, current)
+                        
+                                open_set.remove(current)
+                                for neighbor in graph[current]:
+                                    tentative_g_score = g_score[current] + graph[current][neighbor]
+                                    if tentative_g_score < g_score[neighbor]:
+                                        came_from[neighbor] = current
+                                        g_score[neighbor] = tentative_g_score
+                                        f_score[neighbor] = g_score[neighbor] + heuristic[neighbor]
+                                        open_set.add(neighbor)
+            
+                        # Example usage:
+                        graph = {
+                            'A': {'B': 1, 'C': 4},
+                            'B': {'A': 1, 'D': 2, 'E': 5},
+                            'C': {'A': 4, 'F': 3},
+                            'D': {'B': 2, 'E': 1},
+                            'E': {'B': 5, 'D': 1, 'F': 3},
+                            'F': {'C': 3, 'E': 3}
+                        }
+                        heuristic = {
+                            'A': 7,
+                            'B': 6,
+                            'C': 2,
+                            'D': 4,
+                            'E': 3,
+                            'F': 0
+                        }
+                        path = dls(graph, 'A', 'F', heuristic)
+                    </code>
+                </pre>
+            </section>
+            
+            <section id="future-improvements">
+                <h2>Future Improvements</h2>
+                
+                <h2>Future Improvements in dls for Web Applications</h2>
+                <p>dls has a wide range of applications, including GPS navigation and AI pathfinding. Here are some potential improvements that could enhance its performance and adaptability in web contexts:</p>
+            
+                <h4>1. Adaptive Heuristics</h4>
+                <p>Incorporating adaptive heuristics based on user behavior or system performance can help dls adjust its search strategy dynamically, allowing for more efficient pathfinding.</p>
+            
+                <h4>2. Parallelized dls for Real-Time Applications</h4>
+                <p>By leveraging parallel processing, dls could evaluate multiple paths simultaneously, making it suitable for real-time applications like live route optimization.</p>
+            
+                <h4>3. Memory Optimization Techniques</h4>
+                <p>Future improvements could include efficient memory management strategies to reduce space complexity, particularly in large graphs with many nodes.</p>
+            
+                <h4>4. Weighted dls for Prioritizing Important Nodes</h4>
+                <p>Weighted dls can assign different costs to edges based on importance. In applications like traffic management, routes can be weighted by congestion levels to optimize navigation.</p>
+            
+                <h4>5. Predictive Path Selection</h4>
+                <p>Using machine learning, dls could predict which paths are more likely to lead to optimal solutions, enhancing efficiency in complex environments.</p>
+            
+                <h4>6. Caching for Faster Pathfinding</h4>
+                <p>Caching previously calculated paths can save time when searching for routes, particularly useful in applications with frequently requested paths.</p>
+            
+                <h4>7. Integration with User Behavior Data</h4>
+                <p>Future dls implementations can utilize user behavior data (e.g., common routes taken) to prioritize certain paths, making navigation more user-centered.</p>
+            
+                <h4>8. Enhanced Error Handling and Recovery</h4>
+                <p>Adding error-handling mechanisms to dls can make it more robust, especially for applications that may encounter unexpected obstacles or dynamic changes in the environment.</p>
+            
+                <h4>9. Hybrid Algorithms with dls and Dijkstra's</h4>
+                <p>Combining dls with Dijkstra's algorithm could provide flexible pathfinding options, optimizing performance based on specific application needs.</p>
+            
+                <h4>10. Enhanced Visualization of dls Process</h4>
+                <p>Future web applications can include visualizations that show the dls search process in real-time, which is beneficial for educational tools and data analysis platforms.</p>
+            </section>
+            
+            </main>
+            </div>
+
+
+   <!-- Footer -->
+   <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+        <!-- Logo or Name -->
+        <h3 style="margin-top: 0;">Pathfinder Pro</h3>
+
+        <!-- Quick Links -->
+        <nav>
+            <a href="{{ url_for('index') }}" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Home</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" style="color: #ffffff; margin: 0 10px; text-decoration: none;">About</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#featuresModal" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Features</a>
+            <a href="{{ url_for('contact') }}" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Contact</a>
+        </nav>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
