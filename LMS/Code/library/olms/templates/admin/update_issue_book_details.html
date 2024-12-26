@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row" style="border: 0cqmax;">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card" >
+                <div class="card-body">
+                  <h4 class="card-title">Issued Book Details </h4>
+                 
+                  {% if messages %}
+                  {% for message in messages %}
+                   {% if message.tags == 'error' %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{message}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                   </button>
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                     {% if messages %}
+                  {% for message in messages %}
+                   {% if message.tags == 'success' %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{message}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                   </button>
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                  <form class="forms-sample" method="POST" action="{% url 'update_ibstattus_details' %}">
+                    {% csrf_token %}
+                <input type="hidden" name="bookid" value="{{iss_books.book_id.id}}">
+                <input type="hidden" name="issbk_id" value="{{iss_books.id}}">
+                <h4>Student Details</h4>
+                <hr />
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Student ID :</label>
+                {{iss_books.stud_id.studentid}}
+                </div></div>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Student Name :</label>
+                {{iss_books.stud_id.admin.first_name}} {{iss_books.stud_id.admin.last_name}}
+                </div></div>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Student Email Id :</label>
+                {{iss_books.stud_id.admin.email}}
+                </div></div>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Student Contact No :</label>
+                {{iss_books.stud_id.mobilenumber}}
+                </div></div>
+                
+                
+                
+                <h4>Book Details</h4>
+                <hr/>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Book Image :</label>
+                <img src="{{iss_books.book_id.bookimage.url}}" width="120">
+                </div></div>
+                
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Book Name :</label>
+                {{iss_books.book_id.bookname}}
+                </div>
+                </div>
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>ISBN :</label>
+                {{iss_books.book_id.isbnnum}}
+                </div>
+                </div>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Book Issued Date :</label>
+                {{iss_books.issued_date}}
+                </div></div>
+                
+                <div class="col-md-6"> 
+                <div class="form-group">
+                <label>Book Returned Date :</label>
+                {% if iss_books.return_status == '' %}
+                                                            <label> Not Return Yet </label>{% else %}
+                
+                
+                                                            <label> {{ iss_books.return_date }} </label>{% endif %}
+                </div>
+                </div>
+                
+                <div class="col-md-12"> 
+                <div class="form-group">
+                <label>Fine (in USD) :</label>
+                {% if iss_books.return_status == '' %}
+                <input class="form-control" type="text" name="fine" id="fine"  required />
+                
+                {% else %}
+                <label> {{ iss_books.fine }} </label>{% endif %}
+                </div>
+                </div>
+                {% if iss_books.return_status == '' %}
+                
+                <button type="submit" name="return" id="submit" class="btn btn-info">Return Book </button>
+                
+                 </div>
+                
+                 {% endif %}
+                                                    </form>
+                </div>
+              </div>
+            </div>
+          {% endblock %}
