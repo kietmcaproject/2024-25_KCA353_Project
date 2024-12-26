@@ -1,0 +1,156 @@
+.navbar1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.navbar1 img {
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.linebreak {
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+.navbar2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 96vw;
+    margin: 1.5rem;
+    max-height: 5rem;
+}
+
+.logo {
+    display: flex;
+    flex: 8;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    max-width: 16rem;
+    height: 5rem;
+}
+
+.details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    margin: 0.4rem 0;
+    font-size: 14px;
+    font-style: italic;
+    color: rgb(7, 86, 16);
+    font-weight: bold;
+}
+
+.address {
+    font-size: 10px;
+}
+
+.profile {
+    margin: auto 0;
+}
+
+.profile img {
+    /* flex: 1; */
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.linebreak {
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+.sidebar {
+    position: absolute;
+    right: 20px;
+    top: 128px;
+    background-color: #ebf0d4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0, 0.2);
+    z-index: 2;
+    padding: 0.4em;
+}
+
+.sidebar-link {
+    height: 6rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .profile-img {
+    border-radius: 50px;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.top-sidebar-link {
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.top-sidebar-link:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    border-width: 0px;
+}
+
+.sidebar-link img {
+    height: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.sidebar-link div {
+    font-family: Roboto;
+    font-size: 0.8rem;
+}
+
+.sidebar-link:hover {
+    background-color: #d1e58f;
+    border-radius: 10px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        flex: 2;
+    }
+    .logo img {
+        height: 4rem;
+    }
+    .profile img {
+        width: 3rem;
+        height: 3rem;
+    }
+    .sidebar {
+        top: 113px;
+    }
+    .sidebar-link {
+        width: 4rem;
+        height: 4rem;
+    }
+    .sidebar-link img {
+        height: 1.4rem;
+    }
+}

@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fbe9;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
