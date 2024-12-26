@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3e8e41;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .logoutBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logoutBtn:hover {
+    background-color: #ff1a1a;
+  }
+
+
+
+  .CodeMirror {
+    /* flex: 1; */
+    font-size: 14px;
+    line-height: 1.5;
+    /* border-radius: 6px; */
+    border: 2px solid #5B5B5B; 
+    padding: 12px;
+    background: #0b0909; 
+    color: #EAEAEA; 
+    overflow: hidden;
+  }
+
+  .editorWrap {
+    /* flex: 1; */
+    padding: 0;
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
+  }
+
