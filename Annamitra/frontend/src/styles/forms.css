@@ -1,0 +1,165 @@
+.storage-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 100%;
+    padding: 1.2rem;
+    overflow: hidden;
+}
+
+.leftsection {
+    flex: 3;
+    animation: zoomInOut 4s;
+}
+
+.leftsection img {
+    width: 80%;
+    margin: auto;
+}
+
+.rightsection {
+    flex: 2;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-family: "Raleway", sans-serif;
+    line-height: 30px;
+    font-size: 18px;
+    color: #354e41;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 50px 0 20px;
+}
+
+.heading {
+    align-self: center;
+    padding: 1.5rem 0;
+    font-weight: 600;
+}
+
+.input-form {
+    width: 96%;
+}
+
+.formsgroup {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.formsgroup img {
+    cursor: pointer;
+}
+
+.formscontrol {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: box-shadow 15;
+}
+
+.formscontrol:focus {
+    outline: none;
+    border: 3px solid #9dd3f6;
+    box-shadow: 0 0 5px rgba(32, 138, 208, 0.6);
+}
+
+.formsrow {
+    display: flex;
+    gap: 2.4rem;
+    justify-content: space-between;
+}
+
+.input-form label {
+    text-wrap: nowrap;
+}
+
+.bottom-buttons {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-main {
+    transition: color 0.4s, background-color 0.4s;
+    padding: 10px 20px;
+    margin-top: 1.6rem;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background-color: #d1e48f;
+    color: #354e41;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.button-main:hover {
+    background-color: #7b9c2a;
+}
+
+.button-main span {
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-buttons button {
+    padding: 20px 38px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 28px;
+    font-size: 20px;
+}
+
+.selected {
+    border: 8px solid white;
+    border-radius: 10%;
+    box-shadow: 0 0 0 2px #7b9c2a;
+}
+
+/* Header Styles */
+.h1-line-height {
+    line-height: 50px;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .leftsection {
+        margin-top: 0;
+    }
+    .rightsection {
+        margin: 0px;
+        margin-top: 2rem;
+    }
+    .home-bottom {
+        display: flex;
+    }
+    .home-bottom button {
+        padding: 20px;
+    }
+    .formsrow {
+        display: block;
+    }
+    .storage-section {
+        display: block;
+    }
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
