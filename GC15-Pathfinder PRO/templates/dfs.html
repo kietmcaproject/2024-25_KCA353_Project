@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theory.css') }}">
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <!-- Social Media Icons -->
+            <div class="social-media-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+            <div class="logo">
+                <a href="#">
+                    <div class="circle-logo"></div>
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#featuresModal">Features</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #3a3f51; color: #fff;">
+                    <h1 class="modal-title fs-5 text-center w-100" id="aboutModalLabel">ABOUT</h1>
+                </div>
+                <div class="modal-body about-modal-body">
+                    <!-- Left Side: Theory Section -->
+                    <div class="about-theory">
+                        <p>
+                            <strong>Algorithm Work:</strong>  
+                            Dive into the mechanisms behind our algorithms. Each search method—DFS, DLS, and BFS—offers unique advantages, efficiently exploring and solving complex pathways. Whether seeking depth, flexibility, or breadth, our approach ensures precision in navigating through intricate networks.
+                        </p>
+                    </div>
+
+                    <!-- Right Side: Image Section -->
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='images/about.webp') }}" alt="Algorithm Illustration" class="card2-image">
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #f5f7fa;">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Modal -->
+    <div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #3a3f51; color: #fff;">
+                    <h1 class="modal-title fs-5 text-center w-100" id="featuresModalLabel">FEATURES</h1>
+                </div>
+                <div class="modal-body about-modal-body">
+                    <!-- Left Side: Features Text -->
+                    <div class="about-theory">
+                        <p><strong>Pathfinder Features:</strong> Explore the capabilities of algorithms such as DFS, DLS, and BFS. These tools provide efficient navigation through complex networks, offering flexibility and scalability for diverse applications. From solving mazes to advanced robotics, they ensure precision and reliability in finding optimal paths.</p>
+                    </div>
+
+                    <!-- Right Side: Features Image -->
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='images/features.webp') }}" alt="Features Illustration" class="card2-image">
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #f5f7fa;">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main header content -->
+    <div class="header">
+        <h1>DFS ALGORITHM</h1>
+        <p style="text-align:center"></p>Traversing or searching tree or graph data structures.
+    </div>
+
+    <!-- Sidebar navigation -->
+    <div class="container" style="background-color: #d6dbdf; margin-Left:10px">
+        <aside class="sidebar" style="background-color: #aeb6bf;">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#algorithm">Algorithm</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pseudocode">Pseudocode</a></li>
+                <li><a href="#diagram">Diagram</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+                <li><a href="#limitations">Limitations</a></li>
+                <li><a href="#variants">Variants</a></li>
+                <li><a href="#comparison">Comparison with Other Algorithms</a></li>
+                <li><a href="#real-world-examples">Real-World Examples</a></li>
+                <li><a href="#implementation">Implementation in Programming Languages</a></li>
+                <li><a href="#future-improvements">Future Improvements</a></li>
+            </ul>
+        </aside>
+    
+
+
+        <!-- Main content -->
+        <main>
+            <section id="introduction">
+                <h2>Introduction to Depth-First Search</h2>
+                <p>
+                    Depth-First Search (DFS) is a widely-used algorithm in graph theory, particularly for its ability to traverse or search through a graph by exploring as deep as possible along each branch before backtracking.
+                    DFS systematically goes through all nodes of a graph, fully exploring each path from the starting node to its deepest reachable node before moving to another path. This characteristic makes DFS highly effective 
+                    for applications where exhaustive path exploration is necessary, such as maze generation, solving puzzles, and exploring decision trees in AI.
+                </p>
+                <p>
+                    DFS applies to both graphs and trees, examining nodes (vertices) connected by edges. The algorithm initiates from a starting node and explores each unvisited neighbor by delving deeper until reaching a node with no unvisited neighbors.
+                    When no further paths are available from a node, DFS backtracks to the previous node and continues exploring alternative paths. This recursive backtracking continues until all reachable nodes from the source are visited.
+                </p>
+                <p>
+                    A core feature of DFS is that it uses a **stack data structure** to keep track of nodes, either through recursion (using the call stack) or an explicit stack for non-recursive implementations. The stack follows the Last In, 
+                    First Out (LIFO) principle, allowing DFS to process nodes in depth-first order. This method enables DFS to prioritize depth in exploration, unlike BFS, which traverses nodes in a breadth-first manner. 
+                    Due to this depth-oriented approach, DFS is particularly suitable for applications where reaching specific deep nodes or exploring all possible paths is essential.
+                </p>
+                <p>
+                    DFS has a time complexity of O(V + E), where V represents the number of vertices (nodes) and E represents the number of edges. This efficiency makes DFS practical for numerous applications, 
+                    especially when dealing with large datasets or when a complete search of all paths is desired.
+                </p>
+                <p>
+                    One of DFS's key strengths is its applicability to both **directed and undirected graphs**. DFS can be used to explore individual connected components of a graph or tree, ensuring that all reachable nodes are visited.
+                    This attribute makes DFS valuable in applications like network analysis, where understanding the connectivity or structure of a network is crucial. Additionally, DFS is a valuable tool in detecting cycles in directed 
+                    and undirected graphs, as well as in topological sorting, which is essential in scheduling tasks or processing workflows.
+                </p>
+                <p>
+                    Unlike BFS, DFS does not guarantee finding the shortest path in unweighted graphs; instead, it provides a comprehensive exploration of each possible path. This can be particularly useful in 
+                    applications that require reaching specific nodes or completing all possible routes before drawing conclusions. For example, DFS is commonly applied in game development, puzzle-solving, 
+                    and artificial intelligence for generating solutions that require exhaustive exploration.
+                </p>
+                <p>
+                    However, DFS does have limitations. Its **space complexity** can grow significantly due to the recursive call stack or the explicit stack needed for non-recursive implementations, 
+                    particularly in deeply nested or cyclic graphs. This increase in memory usage can make DFS less efficient for large graphs or graphs with many nodes and edges. Despite these limitations, 
+                    DFS remains an essential algorithm for both beginner and advanced computer science students, offering insights into depth-oriented traversal and recursion.
+                </p>
+            </section>
+        
+            <section id="history">
+                <h2>History</h2>
+                <p>
+                    Depth-First Search (DFS) has its origins in the foundational theories of computer science and graph exploration, emerging in the 1950s as researchers sought efficient methods 
+                    for systematically exploring all nodes in a graph. DFS was initially developed to address challenges in early computational tasks, where complete traversal and exploration of graph structures were required.
+                    <br><br>
+                    Edward F. Moore and C. Y. Lee were among the pioneers who contributed to the conceptual framework of DFS, formalizing it as an effective technique for exploring graphs and finding paths between nodes. 
+                    This exploration-first approach became a crucial part of algorithm theory, influencing the design of applications in fields such as artificial intelligence, network routing, and robotics.
+                    <br><br>
+                    Over the decades, DFS has proven its versatility and value in diverse domains. While it has undergone improvements for computational efficiency, the fundamental principles remain unchanged. 
+                    DFS continues to be a cornerstone algorithm in areas requiring thorough exploration and is frequently used in combination with other techniques for more advanced problem-solving.
+                </p>
+            </section>
+        
+            <section id="algorithm">
+                <h2>Algorithm</h2>
+                <p>
+                    The theory behind DFS emphasizes deep traversal into the graph, exploring each branch from a starting node to its furthest extent before backtracking. This depth-first approach enables 
+                    the algorithm to explore every possible path within a component, making DFS ideal for finding solutions where each route or combination must be considered.
+                    <br><br>
+                    In terms of computational theory, DFS's **correctness** is ensured by its systematic node processing order, which completes each depth branch before returning to previous levels. 
+                    This characteristic makes it well-suited for exploring complex networks and finding solutions that depend on reaching nodes deeper in the graph hierarchy.
+                    <br><br>
+                    DFS's efficiency is also evaluated using **Big O notation**, with time complexity O(V + E), where V is the number of vertices and E is the number of edges. However, its space complexity 
+                    depends on the depth of the recursive stack or the size of the stack data structure, especially in densely connected graphs.
+                    <br><br>
+                    DFS theory remains relevant in computational design, providing insights into path exploration and recursive traversal.
+                </p>
+            </section>
+        
+            <section id="how-it-works">
+                <h2>How It Works</h2>
+                        
+                <ol>
+                    <li><strong>Initialization:</strong> DFS starts with a source node, using either recursion or an explicit stack to manage nodes to be visited.</li>
+                    <li><strong>Stack Insertion:</strong> The source node is added to the stack and marked as visited, preventing reprocessing.</li>
+                    <li><strong>Exploration Process:</strong> DFS removes the top node from the stack, explores its unvisited neighbors, and continues down each path as deeply as possible.</li>
+                    <li><strong>Depth-First Traversal:</strong> DFS explores each node’s neighbors recursively, ensuring all nodes along a branch are visited before backtracking to explore other branches.</li>
+                    <li><strong>Termination:</strong> The algorithm completes once all reachable nodes from the source have been visited, or once a goal node (if specified) is found.</li>
+                </ol>
+                
+                <h4>Example Visualization</h4>
+                <p>DFS can be visualized as a person exploring every possible path in a maze until reaching a dead end, then backtracking to explore other untraveled routes. This exhaustive approach guarantees that every possible path is visited.</p>
+            </section>
+        
+            <section id="pseudocode">
+                <h2>Pseudocode</h2>
+                <pre><code>
+        function DFS(Graph, source):
+            create stack S
+            mark source as visited
+            S.push(source)
+        
+            while S is not empty:
+                v = S.pop()
+                for each neighbor w of v:
+                    if w is not visited:
+                        mark w as visited
+                        S.push(w)
+                </code></pre>
+            </section>
+        
+            <section id="diagram">
+                <h2>Diagram</h2>
+                <p>Visual representation of the algorithm in action.</p>
+                <img src="{{ url_for('static', filename='images/dfs.webp') }}" alt="DFS Algorithm Diagram">
+            </section>
+
+            <section id="applications">
+                <h2>Applications</h2>
+                <ul>
+                    <li><strong>Pathfinding in Mazes:</strong> DFS can be used to explore every route in a maze until finding a solution, making it suitable for complete path exploration.</li>
+                    <li><strong>Cycle Detection:</strong> DFS detects cycles by identifying nodes revisited during its traversal, especially in directed graphs.</li>
+                    <li><strong>Topological Sorting:</strong> DFS is a core component of topological sorting, used in scheduling tasks in directed acyclic graphs.</li>
+                    <li><strong>Generating Mazes:</strong> DFS is effective in maze generation, creating intricate patterns by exploring paths in depth before backtracking.</li>
+                    <li><strong>Artificial Intelligence Decision Trees:</strong> DFS explores decision trees in AI, enabling complex, layered decision-making processes.</li>
+                    <li><strong>Web Crawling:</strong> DFS can be applied in web crawling, exploring linked pages deeply until the end of a branch before backtracking.</li>
+                    <li><strong>Connected Component Detection:</strong> DFS identifies all connected components in graphs, useful in network and community detection analysis.</li>
+                    <li><strong>Garbage Collection:</strong> DFS aids in identifying all reachable objects from a root set, freeing up memory in mark-and-sweep garbage collection.</li>
+                    <li><strong>Game Pathfinding:</strong> DFS can find paths for game characters in complex terrains, where all routes are explored before choosing a path.</li>
+                    <li><strong>Recommendation Systems:</strong> DFS helps in recommendation systems by exploring deeper layers of connections or similar attributes.</li>
+                </ul>
+            </section>
+    
+        
+            <section id="complexity-analysis">
+                <h2>Complexity Analysis</h2>
+            
+                <ul>
+                    <li><strong>Time Complexity:</strong> The time complexity of DFS is <code>O(V + E)</code>, where:
+                        <ul>
+                            <li><code>V</code> is the number of vertices (nodes).</li>
+                            <li><code>E</code> is the number of edges.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Explanation:</strong> Each node is visited once, taking <code>O(V)</code> time, and for each node, all its adjacent nodes (edges) are explored, taking <code>O(E)</code> time.</li>
+                    
+                    <li><strong>Space Complexity:</strong> The space complexity is <code>O(V)</code> for the stack used in the recursion.
+                        <ul>
+                            <li>DFS uses a stack (implicit in recursion) or an explicit stack for non-recursive implementations, requiring <code>O(V)</code> space.</li>
+                            <li>Additionally, an adjacency list or matrix to represent edges requires <code>O(E)</code> space.</li>
+                        </ul>
+                    </li>
+            
+                    <li><strong>Worst Case Scenario:</strong> In a deep graph, where many nodes are interconnected, DFS may explore long paths before backtracking, which can lead to inefficient traversal.</li>
+                    
+                    <li><strong>Optimized for Sparse Graphs:</strong> DFS performs efficiently on sparse graphs, where <code>E</code> is significantly smaller than <code>V^2</code>.</li>
+                    
+                    <li><strong>Applicability:</strong> Given its complexity, DFS is well-suited for applications requiring complete path exploration, like maze generation and topological sorting.</li>
+                </ul>
+            </section>
+            
+            <section id="limitations">
+                <h2>Limitations</h2>
+                <ul>
+                    <li><strong>Not Suitable for Finding Shortest Paths:</strong> DFS does not guarantee the shortest path in unweighted graphs, as it explores deeply without regard for path length.</li>
+                    
+                    <li><strong>High Memory Usage:</strong> DFS can use significant memory for the recursion stack, especially in deep graphs, leading to potential stack overflow.</li>
+                    
+                    <li><strong>Inefficient for Wide Graphs:</strong> DFS can be inefficient for graphs with many branches, potentially exploring unnecessary paths before backtracking.</li>
+                    
+                    <li><strong>Not Optimal for All Shortest Paths:</strong> In graphs with multiple paths, DFS may explore one path fully before backtracking, missing other shorter options.</li>
+                    
+                    <li><strong>Limited to Specific Use Cases:</strong> DFS is primarily effective for scenarios where all paths need exploration, making it less versatile than BFS for shortest path scenarios.</li>
+                    
+                    <li><strong>Potentially Slower in Dense Graphs:</strong> In graphs with many edges, DFS’s exploration may lead to longer runtimes than other algorithms like BFS.</li>
+                </ul>
+            </section>
+            
+            <section id="variants">
+                <h2>Variants</h2>
+                <ul>
+                    <li><strong>Simple DFS:</strong> Standard DFS that explores all nodes as deeply as possible, typically used for pathfinding and traversal.</li>
+                    
+                    <li><strong>Iterative Deepening DFS:</strong> Combines the depth-first approach with a limited depth search, useful when the target depth is unknown.</li>
+                    
+                    <li><strong>Bidirectional DFS:</strong> A DFS that starts from both the source and target nodes simultaneously, reducing search time for pathfinding.</li>
+                    
+                    <li><strong>Depth-Limited DFS:</strong> A variant that imposes a maximum depth limit to prevent excessive recursion in deep graphs.</li>
+                    
+                    <li><strong>Randomized DFS:</strong> This variant incorporates randomness in choosing which neighbor to explore first, adding variability to the traversal order.</li>
+                    
+                    <li><strong>Multi-Source DFS:</strong> DFS that initiates from multiple sources simultaneously, useful for exploring several paths in parallel.</li>
+                    
+                    <li><strong>Topological Sort DFS:</strong> A variant used to perform topological sorting of directed acyclic graphs using DFS.</li>
+                    
+                    <li><strong>Memoized DFS:</strong> An optimization that stores results of previously visited nodes to avoid repeated calculations.</li>
+                    
+                    <li><strong>Parallel DFS:</strong> A variant designed for parallel processing, where multiple processors explore different branches of the graph simultaneously.</li>
+                </ul>
+            </section>
+            
+            <section id="comparison">
+                <h2>Comparison with Other Algorithms</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Type</th>
+                            <th>Time Complexity</th>
+                            <th>Space Complexity</th>
+                            <th>Use Cases</th>
+                            <th>Strengths</th>
+                            <th>Limitations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Breadth-First Search (BFS)</td>
+                            <td>Traversal</td>
+                            <td>O(V + E)</td>
+                            <td>O(V + E)</td>
+                            <td>Shortest path in unweighted graphs, level-order traversal</td>
+                            <td>Finds shortest path in unweighted graphs</td>
+                            <td>Not suitable for weighted graphs, high memory usage</td>
+                        </tr>
+                        <tr>
+                            <td>Depth-First Search (DFS)</td>
+                            <td>Traversal</td>
+                            <td>O(V + E)</td>
+                            <td>O(V)</td> 
+                            <td>Pathfinding, topological sorting, cycle detection</td>
+                            <td>Uses less memory than BFS, effective for deep exploration</td>
+                            <td>Does not guarantee shortest path, can get stuck in deep paths</td>
+                        </tr>
+                        <tr>
+                            <td>Dijkstra's Algorithm</td>
+                            <td>Shortest Path</td>
+                            <td>O((V + E) log V)</td>
+                            <td>O(V)</td>
+                            <td>Shortest path in weighted graphs</td>
+                            <td>Works with weighted edges, guarantees shortest path</td>
+                            <td>Slower than BFS for unweighted graphs, more complex</td>
+                        </tr>
+                        <tr>
+                            <td>A* Algorithm</td>
+                            <td>Pathfinding</td>
+                            <td>O(E)</td> (in optimal conditions)
+                            <td>O(V)</td>
+                            <td>Heuristic pathfinding, game AI</td>
+                            <td>Uses heuristics to find paths quickly</td>
+                            <td>Requires a good heuristic, can be complex to implement</td>
+                        </tr>
+                        <tr>
+                            <td>Floyd-Warshall Algorithm</td>
+                            <td>Shortest Path</td>
+                            <td>O(V^3)</td>
+                            <td>O(V^2)</td>
+                            <td>All-pairs shortest paths</td>
+                            <td>Finds shortest paths between all pairs</td>
+                            <td>Not efficient for sparse graphs, high time complexity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+
+
+            <section id="real-world-examples">
+                <h2>Real-World Examples</h2>
+                <h4>File System Traversal</h4>
+                <p>DFS can be used to explore directories and files on a computer, going as deep as possible into a directory before backtracking.</p>
+            
+                <h4>Game Development</h4>
+                <p>In game AI, DFS is often used to navigate game maps, enabling characters to explore paths until they reach the end or a goal.</p>
+            
+                <h4>Maze Generation</h4>
+                <p>DFS can be used to generate mazes by exploring paths and backtracking when hitting dead ends, ensuring all areas are covered.</p>
+            
+                <h4>Topological Sorting</h4>
+                <p>DFS is useful in topological sorting of directed acyclic graphs (DAGs), enabling a linear ordering of tasks based on dependencies.</p>
+            
+                <h4>Network of Linked Articles/Pages</h4>
+                <p>In a network of articles, DFS can explore all links from a starting article, useful for deep exploration of related content.</p>
+            
+                <h4>Social Network Graph Analysis</h4>
+                <p>DFS can be used to analyze social networks by exploring user connections deeply, useful for finding clusters or communities.</p>
+            
+                <h4>Artificial Intelligence Pathfinding</h4>
+                <p>In AI, DFS can be used to explore possible moves in games, examining deep possibilities before considering alternatives.</p>
+            
+                <h4>Document Object Model (DOM) Manipulation</h4>
+                <p>DFS can traverse and manipulate DOM elements, allowing for deep changes like style or content updates throughout a page.</p>
+            
+                <h4>Automated Testing for UI Components</h4>
+                <p>DFS enables thorough UI testing by recursively exploring UI elements, ensuring all components are tested for functionality.</p>
+            
+                <h4>Web Crawling for Data Extraction</h4>
+                <p>DFS can be used in web crawlers to extract information deeply from pages, useful for data mining and analysis tasks.</p>
+            </section>
+            
+            <section id="implementation">
+                <h2>Implementation in Programming Languages</h2>
+                <pre>
+                    <code>
+                        def dfs(graph, start, visited=None):
+                            if visited is None:
+                                visited = set()
+                            visited.add(start)
+                            print(start)  # Process the current node
+            
+                            for neighbor in graph[start]:
+                                if neighbor not in visited:
+                                    dfs(graph, neighbor, visited)
+            
+                        # Example usage:
+                        graph = {
+                            'A': ['B', 'C'],
+                            'B': ['D', 'E'],
+                            'C': ['F'],
+                            'D': [],
+                            'E': ['F'],
+                            'F': []
+                        }
+                        dfs(graph, 'A')
+                    </code>
+                </pre>
+            </section>
+            
+            <section id="future-improvements">
+                <h2>Future Improvements</h2>
+                
+                <h2>Future Improvements in DFS for Web Applications</h2>
+                <p>Depth-First Search (DFS) has a wide range of applications, including file system navigation and AI pathfinding. Here are some potential improvements that could enhance its performance and adaptability in web contexts:</p>
+            
+                <h4>1. Adaptive Heuristics</h4>
+                <p>Incorporating adaptive heuristics based on user behavior or system performance can help DFS adjust its traversal strategy dynamically, allowing for more efficient searches.</p>
+            
+                <h4>2. Parallelized DFS for Real-Time Applications</h4>
+                <p>By leveraging parallel processing, DFS could explore multiple branches simultaneously, making it suitable for real-time applications like live data retrieval.</p>
+            
+                <h4>3. Memory Optimization Techniques</h4>
+                <p>Future improvements could include efficient memory management by limiting the depth of traversal or using iterative approaches to mitigate stack overflow risks.</p>
+            
+                <h4>4. Weighted DFS for Prioritizing Important Nodes</h4>
+                <p>Weighted DFS can assign priorities to certain nodes based on importance. In a news website, articles can be weighted by recency or relevance to optimize content retrieval.</p>
+            
+                <h4>5. Predictive Node Selection</h4>
+                <p>Using machine learning, DFS could predict which nodes are more likely to lead to valuable outcomes, enhancing search efficiency in recommendation systems.</p>
+            
+                <h4>6. Caching for Faster Traversal</h4>
+                <p>Caching previously traversed nodes can save time when revisiting nodes, which is useful in applications where certain paths are frequently accessed.</p>
+            
+                <h4>7. Integration with User Behavior Data</h4>
+                <p>Future DFS implementations can utilize user behavior data (e.g., click patterns) to prioritize certain paths, making the traversal more user-centered.</p>
+            
+                <h4>8. Enhanced Error Handling and Recovery</h4>
+                <p>Adding error-handling mechanisms to DFS can make it more robust, especially for applications that may encounter unexpected scenarios, allowing it to recover gracefully.</p>
+            
+                <h4>9. Hybrid Algorithms with DFS and BFS</h4>
+                <p>Combining DFS with Breadth-First Search (BFS) could provide flexible search options, optimizing performance based on specific application needs.</p>
+            
+                <h4>10. Enhanced Visualization of DFS Process</h4>
+                <p>Future web applications can include visualizations that show the DFS process in real-time, which is beneficial for educational tools and data analysis platforms.</p>
+            </section>
+            
+
+    </main>
+</div>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    
+            <!-- Logo or Name -->
+            <h3 style="margin-top: 0;">Pathfinder Pro</h3>
+    
+            <!-- Quick Links -->
+            <nav>
+                <a href="{{ url_for('index') }}" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Home</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" style="color: #ffffff; margin: 0 10px; text-decoration: none;">About</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#featuresModal" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Features</a>
+                <a href="{{ url_for('contact') }}" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Contact</a>
+            </nav>
+    
+    </footer>
+    
+    <!-- Font Awesome for icons (include in your HTML head if not already included) -->
+   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
