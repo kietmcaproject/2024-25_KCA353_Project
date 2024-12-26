@@ -1,0 +1,93 @@
+.maindiv {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.footer {
+    background-color: #b9c99c;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    min-height: 8.5rem;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.part1 img {
+    width: 15rem;
+    height: 6rem;
+}
+
+.part2 p {
+    color: rgb(29, 57, 1);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+.part3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.part3 p {
+    color: rgb(29, 57, 1);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.links li:hover {
+    color: rgb(63, 83, 30);
+    cursor: pointer;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 2px;
+    display: flex;
+}
+
+.contact-list li {
+    margin-right: 10px;
+}
+
+li img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.part4 {
+    font-size: 0.75rem;
+    color: white;
+    background-color: rgb(27, 61, 3);
+    height: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .part1 img {
+        height: 4rem;
+        width: 10rem;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+    .footer li {
+        font-size: 14px;
+        text-decoration: underline;
+    }
+}

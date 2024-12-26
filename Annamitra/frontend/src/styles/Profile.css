@@ -1,0 +1,191 @@
+.profile-settings {
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+    max-width: 100%;
+    margin: 5rem;
+    overflow: hidden;
+    box-shadow: 0px 0 0px rgb(255, 255, 255);
+    border-radius: 0.8rem;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e5eccb;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.image {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.image img {
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+}
+
+.categories {
+    flex: 5;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+    width: 100%;
+}
+
+.logout {
+    flex: 2;
+    padding-bottom: 2rem;
+}
+
+.compo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.categories hr {
+    border-color: #c3d095;
+    max-width: 100%;
+    margin-right: 1rem;
+    margin-left: 2rem;
+}
+
+.compo .items {
+    display: inline-block;
+    font-size: large;
+    margin-right: 0.4rem;
+    padding: 0.5rem 0;
+    padding-left: 3rem;
+    width: 100%;
+    height: 100%;
+}
+
+.compo:hover .items,
+.active .items {
+    background-color: #c3d095;
+    cursor: pointer;
+}
+
+.compo:hover .rect,
+.active .rect {
+    display: inline-block;
+    background-color: #354e41;
+    width: 10px;
+    height: 100%;
+}
+
+.right-section {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #e8eddc;
+    padding: 4rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.category-detail {
+    display: none;
+    gap: 1rem;
+}
+
+.category-detail.current {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.cat-head {
+    flex: 2;
+    font-size: 2.4rem;
+    color: #354e41;
+    font-weight: 600;
+}
+
+.main-section {
+    flex: 6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-unit {
+    height: 5rem;
+}
+
+.form-unit div {
+    font-size: larger;
+    color: #000;
+}
+
+.form-unit input {
+    border-radius: 16px;
+}
+
+.update-button {
+    flex: 2;
+    padding-bottom: 3rem;
+}
+
+.setting-head {
+    font-size: 1rem;
+}
+
+.btns-main {
+    transition: color 0.4s, background-color 0.4s;
+    padding: 10px 15px;
+    margin-top: 1.6rem;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background-color: #d1e48f;
+    color: #354e41;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.btns-main:hover {
+    background-color: #7b9c2a;
+}
+
+.btns-main span {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .profile-settings {
+        display: block;
+        height: auto;
+        scroll-behavior: smooth;
+    }
+    .left-section {
+        padding-bottom: 2rem;
+    }
+    .category-detail.current {
+        height: auto;
+    }
+}

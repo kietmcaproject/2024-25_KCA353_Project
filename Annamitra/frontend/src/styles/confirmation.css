@@ -1,0 +1,65 @@
+.popup {
+    width: 75%;
+    height: 75%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    flex: 3;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.user-info h2 {
+    font-size: x-large;
+    font-weight: 550;
+    color: #354e41;
+    align-self: self-start;
+}
+
+.proceed {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 3;
+}
+
+.hidden {
+    display: none;
+}
+.popup button {
+    margin-top: 10px;
+}
+
+.blurred {
+    filter: blur(5px);
+}
