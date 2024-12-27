@@ -1,0 +1,139 @@
+/* HodDashboard.css */
+
+.hod-dashboard {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #f8e16f;
+  }
+  
+  .table-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .table-controls button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8e16f;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    /* font-weight: 600; */
+  }
+  .accept:hover{
+    background-color: #4CAF50;
+    /* color:white; */
+
+  }
+  .decline:hover{
+    background-color: #f44336;
+    /* color:white; */
+  }
+  .table-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .table-controls-ar button:hover {
+    /* background-color: #1e1e1e; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+   /* color:white */
+  }
+
+  .application-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .application-table th, .application-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .application-table th {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .application-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .application-table input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
+  .application-table td button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .application-table td button:first-of-type {
+    background-color: #4CAF50;
+    margin-right: 5px;
+  }
+  
+  .application-table td button:last-of-type {
+    background-color: #f44336;
+  }
+  
+  .application-table td button:hover {
+    opacity: 0.9;
+  }
+
+  .welcome-header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.reports-link{
+  margin: 0 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8e16f;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+.reports-link:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.table-controls-ar button {
+  margin: 0 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8e16f;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  /* font-weight: 600; */
+}
+
+.yellow{
+  color:#f8e16f;
+}

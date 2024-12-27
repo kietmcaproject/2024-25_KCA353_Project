@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Author </h4>
+                 
+                  {% if messages %}
+                  {% for message in messages %}
+                   {% if message.tags == 'error' %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{message}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                   </button>
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                     {% if messages %}
+                  {% for message in messages %}
+                   {% if message.tags == 'success' %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{message}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                   </button>
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                  <form class="forms-sample"method="POST" action="{% url 'update_author_details' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputName1">Author Name</label>
+                      <input type="text"  name="authorname" class="form-control" required="true" value="{{auth.authorname}}">
+                      <input type="hidden"  name="auth_id" class="form-control" required="true" value="{{auth.id}}">
+                    </div>
+                  
+                   
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>{% endblock %}

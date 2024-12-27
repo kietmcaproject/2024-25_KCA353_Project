@@ -1,0 +1,122 @@
+.feedback-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff); /* Subtle gradient background */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+}
+
+.feedback-container h2 {
+  color: #3949ab; /* Modern indigo color */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-form label {
+  font-weight: 600;
+  color: #2e3c5d; /* Professional dark blue-gray color */
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.feedback-form textarea,
+.feedback-form input[type="text"],
+.feedback-form input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ced6e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f9fafc; /* Light, clean background */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form textarea:hover,
+.feedback-form input[type="text"]:hover,
+.feedback-form input[type="number"]:hover {
+  border-color: #3949ab; /* Indigo color for hover effect */
+}
+
+.feedback-form textarea:focus,
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="number"]:focus {
+  border-color: #1e88e5; /* Blue focus highlight */
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 136, 229, 0.4); /* Slight glowing effect */
+}
+
+.feedback-form textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+.feedback-form input[type="number"] {
+  max-width: 150px; /* Narrower for compact numeric fields */
+}
+
+.feedback-form .submit-button {
+  background: linear-gradient(135deg, #3949ab, #1e88e5); /* Gradient button */
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+}
+
+.feedback-form .submit-button:hover {
+  transform: scale(1.05); /* Slight enlargement */
+  box-shadow: 0 8px 15px rgba(30, 136, 229, 0.3); /* Elevated hover effect */
+}
+
+.feedback-form .submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(30, 136, 229, 0.5); /* Glowing effect on focus */
+}
+
+.feedback-form .submit-button:active {
+  transform: scale(0.95); /* Button presses in */
+}
+
+/* Placeholder styling */
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: #a0a4ae; /* Softer placeholder text color */
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-container {
+    padding: 20px;
+  }
+
+  .feedback-container h2 {
+    font-size: 20px;
+  }
+
+  .feedback-form label {
+    font-size: 14px;
+  }
+
+  .feedback-form .submit-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

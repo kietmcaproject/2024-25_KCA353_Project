@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Subscribing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #E3F2FD, #BBDEFB); /* Light blue gradient */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Dark grey for better readability */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .thank-you-container {
+            background: #FFFFFF; /* White background */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .thank-you-container h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #1976D2; /* A soft blue color */
+            margin-bottom: 20px;
+        }
+
+        .thank-you-container p {
+            font-size: 18px;
+            color: #555; /* Medium grey for paragraph text */
+            margin-bottom: 30px;
+        }
+
+        .thank-you-container button {
+            background: #BBDEFB; /* Light blue background for button */
+            border: none;
+            color: #1976D2; /* Darker blue text for contrast */
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .thank-you-container button:hover {
+            background: #90CAF9; /* Slightly darker blue on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #1976D2; /* Blue color for links */
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0D47A1; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Thank you for subscribing! We will notify you about every new update, event, and special offer. Get ready to receive the latest insights straight to your inbox!</p>
+        <p>Stay tuned for more amazing content and updates.</p>
+        <button onclick="window.location.href='Webpage.html'"><a href="{{ url_for('index') }}">Back To Home</a></button>
+
+        <div class="social-links">
+            <p>Follow us on:</p>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+</body>
+</html>
