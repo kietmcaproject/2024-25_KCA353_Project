@@ -1,0 +1,12 @@
+#navbar {
+  background-image: linear-gradient(to right, #9333ea, #4338ca);
+}
+#eventify-icon {
+  color: white;
+  font-size: 25px;
+  /* display: flex;
+  justify-content: space-around; */
+}
+#eventify-icon i {
+  margin-right: 5px;
+}
