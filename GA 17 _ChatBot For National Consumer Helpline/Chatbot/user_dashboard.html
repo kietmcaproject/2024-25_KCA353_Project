@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Ensures content is centered vertically */
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Centering the Dashboard Content */
+        .dashboard-container {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 100px;
+        }
+
+        .dashboard-container h1 {
+            color: #333;
+        }
+
+        .dashboard-container p {
+            color: #555;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Chatbot button styles */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 50%;
+            border: none;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .chatbot-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Chatbot window styles */
+        .chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-window .chat-header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .chatbot-window .chat-body {
+            height: 250px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f9f9f9;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chatbot-window .chat-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .chatbot-window input {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chatbot-window button {
+            width: 25%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+
+        .chatbot-window button:hover {
+            background-color: #218838;
+        }
+
+        .options-popup {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .options-popup a {
+            display: block;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .options-popup a:hover {
+            background-color: #0056b3;
+        }
+
+        /* User and Bot messages */
+        .user-message {
+            align-self: flex-start;
+            background-color: #e1f5fe;
+            padding: 8px;
+            border-radius: 5px;
+            width: fit-content;
+            max-width: 80%;
+            margin-bottom: 5px;
+        }
+
+        .bot-message {
+            align-self: flex-end;
+            background-color: #c8e6c9;
+            padding: 8px;
+            border-radius: 5px;
+            width: fit-content;
+            max-width: 80%;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>User Dashboard</h2>
+        <a href="{{ url_for('user_dashboard') }}">Home</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="dashboard-container">
+        <h1>Welcome, {{ user }}</h1>
+        <p>Here you can check your profile, request services, and explore other options.</p>
+        <button class="logout-btn" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+    </div>
+
+    <!-- Chatbot button -->
+    <button class="chatbot-btn" id="chatbotBtn" onclick="toggleChatWindow()">💬</button>
+
+    <!-- Chatbot window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chat-header">Chat with us!</div>
+        <div class="chat-body" id="chatBody">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userMessage" placeholder="Type your message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="options-popup" id="optionsPopup" style="display: none;">
+            <a href="#" onclick="handleOptionClick(event, 'Adhar', 'https://uidai.gov.in/en/')">Adhar</a>
+            <a href="#" onclick="handleOptionClick(event, 'Agriculture', 'https://agrifarming.in')">Agriculture</a>
+            <a href="#" onclick="handleOptionClick(event, 'Automobiles', 'https://www.automobile.com')">Automobiles</a>
+            <a href="#" onclick="handleOptionClick(event, 'Banking', 'https://www.rbi.org.in/')">Banking</a>
+            <a href="#" onclick="handleProfileCheck()">Check your Profile</a>
+            <a href="#" onclick="handleProfileCheck()">More Assistance</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatWindow() {
+            const chatWindow = document.getElementById('chatbotWindow');
+            chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('userMessage');
+            const message = messageInput.value.trim();
+            if (message) {
+                const chatBody = document.getElementById('chatBody');
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = `You: ${message}`;
+                chatBody.appendChild(userMessage);
+                messageInput.value = '';
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'bot-message';
+                    botMessage.textContent = `Chatbot: I'm here to assist you!`;
+                    chatBody.appendChild(botMessage);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    showOptions();
+                }, 1000);
+            }
+        }
+
+        function showOptions() {
+            const optionsPopup = document.getElementById('optionsPopup');
+            optionsPopup.style.display = 'grid';
+        }
+
+        function handleOptionClick(event, option, link) {
+            const chatBody = document.getElementById('chatBody');
+            const optionMessage = document.createElement('div');
+            optionMessage.className = 'bot-message';
+            optionMessage.textContent = `Chatbot: You selected ${option}. Here's more info.`;
+            chatBody.appendChild(optionMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            if (link) {
+                window.open(link, '_blank');
+            }
+        }
+
+        function handleProfileCheck() {
+            const chatBody = document.getElementById('chatBody');
+            const botMessage = document.createElement('div');
+            botMessage.className = 'bot-message';
+            botMessage.textContent = `Chatbot: Redirecting to your profile!`;
+            chatBody.appendChild(botMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            setTimeout(() => {
+                window.location.href = '/profile'; // Update this link with the correct profile URL
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<form id="add-response-form">
+    <label for="question">Question:</label>
+    <input type="text" id="question" name="question" required>
+    <br>
+    <label for="answer">Answer:</label>
+    <textarea id="answer" name="answer" required></textarea>
+    <br>
+    <button type="submit">Add Response</button>
+</form>
+
+<script>
+    document.getElementById('add-response-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const question = document.getElementById('question').value;
+        const answer = document.getElementById('answer').value;
+
+        fetch('/add_response', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ question, answer })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message || data.error);
+            if (data.message) {
+                document.getElementById('question').value = '';
+                document.getElementById('answer').value = '';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Sign Up Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        /* Sign Up Card */
+        .signup-card {
+            background-color: #fff;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Form and Inputs */
+        .signup-card h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .signup-card input[type="text"],
+        .signup-card input[type="email"],
+        .signup-card input[type="password"],
+        .signup-card select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .signup-card button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Links */
+        .signup-card p {
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .signup-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flash Messages */
+        .flash-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        
+        .flash-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-card">
+        <h2>Sign Up</h2>
+        <form action="{{ url_for('signup') }}" method="post">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <!-- Role Selection -->
+            <label for="role">Select Role:</label>
+            <select name="role" id="role" required>
+                <option value="User">User</option>
+                <option value="Employee">Employee</option>
+                <option value="Admin">Admin</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+
+</body>
+</html>
