@@ -1,0 +1,144 @@
+
+.users {
+    width: 90%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 30px;
+    min-height: 80vh;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-left: 250px;  
+}
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th {
+    padding: 15px 20px;
+    text-align: left;
+    background-color: #4A90E2;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  td {
+    padding: 15px 20px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  tbody tr:nth-child(odd) td {
+    background-color: #f9fafb;
+  }
+  
+  tbody tr:hover {
+    background-color: #e8f4fe;
+    cursor: pointer;
+  }
+  
+  button.common-btn {
+    padding: 10px 20px;
+    background-color: #50b1ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 127, 255, 0.2);
+  }
+  
+  button.common-btn:hover {
+    background-color: #3a94d0;
+    box-shadow: 0 8px 15px rgba(0, 127, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  button.common-btn:active {
+    transform: translateY(1px);
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 1024px) {
+    .users {
+      width: 95%;
+      padding: 20px;
+      margin-left: 0;  
+    }
+  
+    table {
+      font-size: 13px;
+    }
+  
+    th, td {
+      padding: 12px;
+    }
+  
+    button.common-btn {
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .users {
+      width: 100%;
+      margin-left: 0;  
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 10px;
+    }
+  
+    button.common-btn {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .users {
+      padding: 15px;
+      width: 100%;
+      margin-left: 0;  
+    }
+  
+    table {
+      font-size: 11px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  
+    button.common-btn {
+      padding: 8px 14px;
+    }
+  }
+  
+  
