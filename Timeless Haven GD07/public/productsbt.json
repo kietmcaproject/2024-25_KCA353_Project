@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Blanket",
+    "image": "/bt1.jpg",
+    "price": 1700
+  },
+  {
+    "id": 2,
+    "title": "Blanket",
+    "image": "/bt2.jpg",
+    "price": 1500
+  },
+  {
+    "id": 3,
+    "title": "Blanket",
+    "image": "/bt3.jpg",
+    "price": 1600
+  },
+  {
+    "id": 4,
+    "title": "Blanket",
+    "image": "/bt4.jpg",
+    "price": 599
+  },
+  {
+    "id": 5,
+    "title": "Blanket",
+    "image": "/bt5.jpg",
+    "price": 1300
+  },
+  {
+    "id": 6,
+    "title": "Blanket",
+    "image": "/bt6.jpg",
+    "price": 1500
+  }
+]
