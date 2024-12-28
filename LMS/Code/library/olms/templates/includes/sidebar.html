@@ -1,0 +1,121 @@
+{% load static %}
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  
+  {% if user.user_type == 1 %}
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashboard' %}">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Category</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'add_category' %}">Add</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'manage_category' %}">Manage</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Author</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="form-elements">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'add_author' %}">Add</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'manage_author' %}">Manage</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+          <i class="icon-grid-2 menu-icon"></i>
+          <span class="menu-title">Books</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="tables">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'add_books' %}">Add</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'manage_books' %}">Manage</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Issue Book</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="icons">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'issue_book' %}">Issue New Book</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'manage_issued_books' %}">Manage Issue Book</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'manage_regusers' %}">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Reg Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#icons1" aria-expanded="false" aria-controls="icons1">
+          <i class="icon-search menu-icon"></i>
+          <span class="menu-title">Search</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="icons1">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'search_books' %}">Search Book</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'search_regusers' %}">Search Student</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    {% elif user.user_type == 2 %}
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashboard' %}">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'books_details' %}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Books Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'issued_books' %}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Issued Books</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">My Account</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="error">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{% url 'admin_profile' %}">User Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'change_password' %}">Change Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  {% endif %}
+</nav>
