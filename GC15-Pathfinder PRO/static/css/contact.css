@@ -1,0 +1,350 @@
+.top-bar {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;  /* Ensures that items wrap when necessary */
+}
+
+
+
+
+/* Modal container layout */
+.about-modal-body {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f7f8fc, #e2e8f0);
+    padding: 30px;
+    gap: 30px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Left side - Theory text */
+.about-theory {
+    flex: 1;
+    padding: 20px;
+    color: #2c3e50;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    transition: transform 0.3s ease;
+}
+
+.about-theory:hover {
+    transform: translateY(-5px);
+}
+
+/* Right side - Image */
+.about-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px; /* Increased max-width */
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header styling */
+.modal-header {
+    background: linear-gradient(135deg, #34495e, #3a3f51);
+    color: #ffffff;
+    border-bottom: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.modal-footer {
+    background-color: #f7f8fc;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer .btn-primary {
+    background: linear-gradient(135deg, #303133, #111212);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background: linear-gradient(135deg, #7f23b9, #0ec3c9);
+}
+
+
+
+/* Social Media Icons Styling */
+.social-media-icons {
+    display: flex;
+}
+
+.social-media-icons a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Logo Section Styling */
+.logo a {
+    text-decoration: none;
+}
+
+.circle-logo {
+    background: url('../images/logo6.png') no-repeat center center;
+    background-size: 170px;
+    width: 140px;
+    height: 110px;
+    transition: transform 0.3s ease;
+}
+
+.circle-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    background-color: #e74c3c;
+    border: none;
+    padding: 5px 8px;
+    margin-left: 5px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.search-bar button i {
+    font-size: 14px;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px; /* Add space between the top bar and navigation */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #aedb1b;
+}
+
+        
+
+
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffffff, #ffffff);
+    color: #fff;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #3b3939;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #d0cece;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    color: #333;
+}
+
+.info, .form-section {
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #444;
+}
+
+.info h2, .form-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0px 0px 10px rgba(106, 17, 203, 0.5);
+}
+
+form input[type="submit"] {
+    background: linear-gradient(to right, #1e1c20, #cfdcf1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(to right, #707783, #ae9fbf);
+}
+
+.modal-header h1 {
+    color: #bba3d3;
+}
+
+.modal-footer button {
+    background: linear-gradient(to right, #4b4254, #c3d7fa);
+    color: white;
+    border: none;
+}
+
+.modal-footer button:hover {
+    background: linear-gradient(to right, #c6ccd5, #6f6778);
+}
+
+
+
+
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 2px -2px gray;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #333;
+            
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 2px -2px rgb(208, 172, 172);
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            aside.sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
