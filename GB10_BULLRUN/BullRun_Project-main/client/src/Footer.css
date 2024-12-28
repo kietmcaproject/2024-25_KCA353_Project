@@ -1,0 +1,92 @@
+footer {
+    background-color: #d4ebf1;  
+    padding: 20px 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  #footer-logo{
+    height: 6vh;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 1 1 30%; /* Each column takes 30% of the row */
+    min-width: 250px; /* Minimum width for each column */
+  }
+  
+  .col img {
+    margin-bottom: 10px;
+  }
+  
+  .col p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .col a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .col a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Ensure the paragraphs are at the bottom */
+  .text-muted {
+    margin-top: 40px;
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 14px;
+    text-align: justify;
+  }
+  
+  .text-muted p {
+    margin-bottom: 15px;
+  }
+  
+  /* Border at the top for better section separation */
+  .border-top {
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: center; /* Center align columns for smaller screens */
+    }
+  
+    .col {
+      flex: 1 1 100%; /* Columns take full width */
+      text-align: center;
+    }
+  
+    .col img {
+      width: 70%;
+    }
+  
+    .text-muted {
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+  
