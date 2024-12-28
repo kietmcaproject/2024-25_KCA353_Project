@@ -1,0 +1,36 @@
+/* Center the content in the viewport */
+.future-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa; /* Light background */
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Neutral text color */
+  }
+  
+  /* Styling for the message */
+  .future-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3498db; /* Vibrant blue for the text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add animation for text appearance */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .future-container h1 {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  

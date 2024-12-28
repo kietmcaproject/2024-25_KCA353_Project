@@ -1,0 +1,136 @@
+/* Container for the profile photo and buttons */
+.photo-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 10px; /* Add some spacing between profile viewers */
+  overflow-x: scroll;
+}
+
+/* Scrollbar styling */
+.photo-viewer::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height for horizontal scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+.photo-viewer::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+.photo-viewer::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Blue color for the thumb */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; /* Border to create contrast */
+}
+
+/* Hover effect for the scrollbar thumb */
+.photo-viewer::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
+
+/* Profile Image */
+.photo-viewer img {
+  width: 70%;
+  max-width: 200px;
+  border-radius: 50%; /* Changed to a perfect circle */
+  object-fit: cover;
+  margin-bottom: 15px; /* Increased space below the image */
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect to slightly zoom in */
+.photo-viewer img:hover {
+  transform: scale(1.1); /* Slightly increased zoom effect */
+}
+
+/* Username styling */
+.photo-viewer h3 {
+  font-size: 1.4em; /* Slightly bigger font */
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Email styling */
+.photo-viewer h5 {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Button styling */
+.photo-viewer button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  font-size: 1.1em;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+/* Unfollow button */
+.photo-viewer .btn-warning {
+  background-color: #ffc107;
+  color: white;
+  border: 1px solid #ffc107; /* Added border for better styling */
+}
+
+/* Follow button */
+.photo-viewer .btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff; /* Added border for consistency */
+}
+
+/* Button hover effect */
+.photo-viewer .btn-warning:hover,
+.photo-viewer .btn-primary:hover {
+  background-color: #e0a800;
+  transform: translateY(-3px); /* Slight hover lift effect */
+}
+
+/* Button active state for more interaction */
+.photo-viewer .btn-warning:active,
+.photo-viewer .btn-primary:active {
+  transform: translateY(2px); /* Button pushes down slightly on click */
+}
+
+/* Styling for mobile responsiveness */
+@media (max-width: 768px) {
+  .photo-viewer {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .photo-viewer img {
+    width: 80%;
+    max-width: 180px;
+  }
+
+  .photo-viewer h3 {
+    font-size: 1.2em;
+  }
+
+  .photo-viewer h5 {
+    font-size: 0.9em;
+  }
+
+  .photo-viewer button {
+    font-size: 1em;
+  }
+}

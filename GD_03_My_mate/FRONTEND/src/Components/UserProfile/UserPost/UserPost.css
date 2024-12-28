@@ -1,0 +1,129 @@
+/* General styling for the user posts page */
+.pf-user-posts {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows posts to wrap to the next line if needed */
+  gap: 20px; /* Space between posts */
+  justify-content: center; /* Center the posts horizontally */
+  background-color: #a8a8a8;
+  min-height: 100vh;
+}
+
+/* Heading styling */
+.pf-h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Styling for each individual post */
+.pf-post {
+  width: calc(50% - 10px); /* Ensure two posts fit in one row, considering the gap */
+  height: 400px; /* Height of the post */
+  background-color: #d6d1d1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Container for post content */
+.pf-post-content {
+  flex-grow: 1; /* Allows content to take up available space */
+  text-align: left; /* Align content to the left */
+}
+
+/* Text inside each post */
+.pf-post-content p {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Styling for the post image */
+.pf-post-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Hover effect for post images */
+.pf-post-image:hover {
+  transform: scale(1.5);
+}
+
+/* Styling for the Edit and Delete buttons */
+.pf-post-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+}
+
+.pf-edit-btn, .pf-delete-btn {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pf-edit-btn {
+  background-color: #4CAF50; /* Green for Edit */
+  color: white;
+}
+
+.pf-edit-btn:hover {
+  background-color: #45a049;
+}
+
+.pf-delete-btn {
+  background-color: #f44336; /* Red for Delete */
+  color: white;
+}
+
+.pf-delete-btn:hover {
+  background-color: #e53935;
+}
+
+/* Empty state when no posts are available */
+.pf-user-posts p {
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Loading and error states */
+.pf-loading,
+.pf-error {
+  font-size: 1.5rem;
+  color: #ff6347;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .pf-post {
+    width: 100%; /* On smaller screens, posts take full width */
+  }
+}

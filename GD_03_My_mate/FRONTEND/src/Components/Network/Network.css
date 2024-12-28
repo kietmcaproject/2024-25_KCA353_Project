@@ -1,0 +1,150 @@
+/* Network Component Container */
+.network {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #3971d8, #2a5298); /* Matching the sidebar's gradient */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  overflow-y: auto; /* Enable smooth scrolling */
+  height: 80vh;
+  padding-top: 30px; /* Add space for the title */
+  overflow-y: scroll;
+}
+
+/* Title */
+h3 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Search Box */
+.search-box {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* User List */
+.network-user {
+  display: flex;
+  align-items: center;
+  padding: 15px 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1); /* Slightly translucent background */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.network-user:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Avatar Styles */
+.network-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.network-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* User Info */
+.network-user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.network-user-info span {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.network-user-details {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .network {
+    padding: 15px;
+  }
+
+  /* Make the search box and user list more compact */
+  .search-box {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .network-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .network-user-info span {
+    font-size: 1.1rem;
+  }
+
+  /* Adjust the title for smaller screens */
+  h3 {
+    font-size: 22px;
+  }
+}
+
+/* Scrollbar Customization */
+.network::-webkit-scrollbar {
+  width: 10px;
+}
+
+.network::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+}
+
+.network::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Focus Outline for Accessibility */
+.network-user:focus,
+.search-box:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}

@@ -1,0 +1,39 @@
+/* For larger screens */
+.home-body {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 600px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Chat Panel */
+.chat-panel {
+  /* width: 320px; */
+  margin-top: 20px;
+  padding: 10px;
+  height: 600px;
+  border-left: 1px solid #ccc;
+}
+
+/* Post Feed */
+.post-feed {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .sidebar,
+  .chat-panel {
+    display: none;
+  }
+
+  .post-feed {
+    width: 100%;
+  }
+}

@@ -1,0 +1,234 @@
+/* Styling for the login container */
+.mymate-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  color: #fff;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Main container layout */
+.mymate-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideUp 1s ease-in-out;
+}
+
+.left-section {
+  padding: 40px;
+  max-width: 500px;
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.left-section h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.left-section p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.left-section a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.left-section a:hover {
+  text-decoration: underline;
+  color: #8e24aa;
+}
+
+.google-signin,
+.email-signin {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.google-signin {
+  background: linear-gradient(45deg, #4285f4, #34a853);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.email-signin {
+  background-color: #f7f7f7;
+  color: #333;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-signin:hover {
+  background: linear-gradient(45deg, #357ae8, #0c9c45);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+}
+
+.email-signin:hover {
+  background-color: #e8e8e8;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.right-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  background-image: linear-gradient(45deg, #00bcd4, #8e24aa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: gradientBorder 5s linear infinite;
+}
+
+.logo-line {
+  font-size: 50px;
+  font-weight: 700;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo-line:first-child {
+  color: white;
+}
+
+.logo-line:last-child {
+  color: white;
+}
+
+.logo:hover .logo-line {
+  transform: scale(1.1);
+}
+
+.logo:hover .logo-line:first-child {
+  color: white;
+}
+
+.logo:hover .logo-line:last-child {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mymate-main {
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  .left-section {
+    padding: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .left-section h1 {
+    font-size: 2rem;
+  }
+
+  .left-section p {
+    font-size: 0.9rem;
+  }
+
+  .right-section {
+    height: auto;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .logo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .logo-line {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .left-section p {
+    font-size: 0.8rem;
+  }
+
+  .google-signin,
+  .email-signin {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-line {
+    font-size: 35px;
+  }
+}
+
+/* Continuous gradient animation for the logo border */
+@keyframes gradientBorder {
+  0% {
+    background-image: linear-gradient(45deg, #00bcd4, #8e24aa);
+  }
+  25% {
+    background-image: linear-gradient(45deg, #8e24aa, #00bcd4);
+  }
+  50% {
+    background-image: linear-gradient(45deg, #ff4081, #00bcd4);
+  }
+  75% {
+    background-image: linear-gradient(45deg, #00bcd4, #ff4081);
+  }
+  100% {
+    background-image: linear-gradient(45deg, #00bcd4, #8e24aa);
+  }
+}

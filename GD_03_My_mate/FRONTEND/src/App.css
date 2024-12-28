@@ -1,0 +1,32 @@
+.App {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  nav {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  

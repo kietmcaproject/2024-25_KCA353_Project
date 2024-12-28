@@ -1,0 +1,199 @@
+/* Navbar Container */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #4a90e2, #00bcd4); /* Gradient Background */
+  border-bottom: 2px solid #8e24aa; /* Purple Accent */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Explore Network Button (only visible on small screens) */
+.navbar-explore-network {
+  display: none; /* Hide by default */
+  margin-left: 20px;
+}
+
+.explore-network-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.explore-network-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Logo Section */
+.navbar-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: rotate(360deg); /* Rotate animation on hover */
+}
+
+/* Search and Icons */
+.navbar-search-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Search Bar */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-search:hover {
+  background-color: #f4f6f8; /* Slightly darker background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #4a90e2; /* Primary Color */
+  margin-right: 10px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Icons Section */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 22px;
+  color: #fff; /* White for contrast against gradient */
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+  color: #ffc107; /* Gold for hover */
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+.notification .notification-dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid #ffffff; /* White border for clarity */
+}
+
+/* Profile Section */
+.navbar-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-profile img.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-profile img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth on hover */
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff; /* Match gradient */
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg); /* Rotate animation on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  /* Show Explore Network button on small screens */
+  .navbar-explore-network {
+    display: block;
+  }
+
+  .navbar-search-icons {
+    display: none; /* Hide search and icons on small screens */
+  }
+
+  .menu-toggle {
+    display: block; /* Show menu toggle button on small screens */
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.navbar-dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.navbar-light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Icon colors in dark mode */
+.navbar-dark .icon {
+  color: #f1f1f1;
+}
+
+.navbar-light .icon {
+  color: #333;
+}

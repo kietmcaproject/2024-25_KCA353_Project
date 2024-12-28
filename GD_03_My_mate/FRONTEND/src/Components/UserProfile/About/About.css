@@ -1,0 +1,128 @@
+/* Container for the about page */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 30px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.about-page h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Email paragraph styling */
+.about-page p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Container for the bio content */
+.bio-box {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Textarea for bio editing */
+.about-page textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  resize: none;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* Buttons container */
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+/* Button styling */
+.about-page button {
+  padding: 12px 18px;
+  font-size: 1.1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit Bio button styling */
+.about-page button.edit {
+  background-color: #ffc107;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Hover effect on buttons */
+.about-page button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Active state for buttons */
+.about-page button:active {
+  transform: translateY(2px);
+}
+
+/* Cancel button styling */
+.about-page button.cancel {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Layout for buttons when editing bio */
+.about-page .button-group button + button {
+  margin-left: 10px;
+}
+
+/* Styling for mobile responsiveness */
+@media (max-width: 768px) {
+  .about-page {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .about-page h2 {
+    font-size: 1.8em;
+  }
+
+  .about-page p {
+    font-size: 1em;
+  }
+
+  .about-page textarea {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .about-page button {
+    font-size: 1em;
+  }
+}
