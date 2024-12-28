@@ -1,0 +1,100 @@
+/* LandingPage.css */
+
+.landing-page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+    color: white;
+  }
+  
+  /* Animated Background Grid */
+  .background-grid {
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMXYxaC0xeiIgZmlsbD0icmdiYSg5NiwgMTY1LCAyNTAsIDAuMDUpIi8+PC9nPjwvc3ZnPg==');
+    opacity: 0.2;
+  }
+  
+  .icon {
+    position: absolute;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.15);
+    animation: float 10s ease-in-out infinite;
+  }
+  
+  .code-icon { top: 20%; left: 15%; }
+  .laptop-icon { top: 40%; right: 10%; }
+  .database-icon { bottom: 20%; left: 25%; }
+  .cloud-icon { bottom: 30%; right: 30%; }
+  .server-icon { top: 30%; left: 40%; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+    margin-top: 15vh;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .hero-tagline {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1em;
+  }
+  
+  .hero-buttons .cta-button {
+    margin: 0.5em;
+    padding: 0.8em 2em;
+    font-size: 1em;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .login-button {
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .login-button:hover {
+    color: #ffb74d;
+  }
+  
