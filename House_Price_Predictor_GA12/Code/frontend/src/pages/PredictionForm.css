@@ -1,0 +1,144 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+
+    height: 100vh; 
+    width: 100vw; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.card {
+
+    width: 100%;
+    margin-right: 500px;
+    
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.blue-text {
+    color: #00BCD4
+}
+
+.form-control-label {
+    margin-bottom: 0
+}
+
+input,
+textarea,
+button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.btn-block {
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer
+}
+
+.btn-block:hover {
+    color: #fff !important
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+
+
+
+
+
+
+
+
+select {
+    position: relative;
+  }
+  
+select option {
+    position: relative;
+    top: auto; /* Ensure dropdown appears below */
+  }
+
+
+
+
+
+
+ /* Navbar Styling */
+
+
+ /* Navbar Styling */
+.navbar {
+    margin-top: 0;
+    width: 100%;
+    position: absolute;
+    margin-bottom: 30px;
+    background-color: #800080; /* Purple background */
+    color: #000000; /* Black text */
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-right: 15px;
+}
+
+.navbar .btn {
+    color: black;
+    border-color: black;
+    background-color: transparent;
+}
+
+.navbar .btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.navbar .d-flex {
+    margin-left: auto;
+    align-items: center;
+}
+
+

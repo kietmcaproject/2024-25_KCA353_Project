@@ -1,0 +1,18 @@
+.Navbar{
+    height: 100vh;
+    /* background: url('https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav{
+    background: #000000e7;
+    transition: 0.6s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
