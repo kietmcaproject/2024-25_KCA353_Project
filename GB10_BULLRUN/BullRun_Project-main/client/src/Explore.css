@@ -1,0 +1,129 @@
+body{
+    background-color: #effafe;
+}
+.explore-container {
+    padding: 20px;
+    height: 250px;
+    overflow:hidden;
+    /* text-align: center; */
+}
+.explore-container h1{
+    color:#007bff;
+    float:left;
+    margin-bottom: 20px
+}
+/* Card container grid layout */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px; /* Space between cards*/
+    margin-top: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+   
+      
+}  
+.card-container::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+  }
+
+  .card-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+
+
+/* Card styling */
+.button{
+    padding: 10px 20px;
+    border: 2px solid #3eb4cf;
+    color: #1e6d71;
+    border-radius: 10px;
+    transition-duration: 200ms;
+    transition-property: all;
+  }
+  .button:hover{
+    background-color: #17646e;
+    color: white;
+    border-color: white;
+  }
+.sec-head{
+    /* text-align: center; */
+    padding: 1% 6%;
+    display: flex;
+    justify-content: space-between;    
+}
+.sec-head h1{
+    font-size: 30px;
+}
+.sec-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2%;
+    justify-content: space-between;
+}
+.card {
+    background-color: #f9fdfe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* transition: transform 0.3s, box-shadow 0.3s; */
+    margin:15px;
+    height: auto;
+    flex: 0 0 calc(20% - 20px); /* Each card takes 20% of container width minus the gap */
+      max-width: calc(20% - 85px);
+      display: flex; /* Flexbox for better alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+#button{
+    background-color: white;
+  color: #007bff;
+  border-radius: 5px;
+    float: right;
+    border: 2px solid #007bff;
+    height: 30px;
+    width:90px;
+    cursor: pointer;
+    margin-bottom:20px;
+
+}
+#button:hover {
+    background-color: #17646e;
+    color: white;
+  }
+/* Responsive styling for smaller screens */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,73 @@
+.guard-dashboard-container {
+  padding: 20px;
+}
+
+.filter-buttons {
+  margin-bottom: 15px;
+}
+
+.filter-buttons button {
+  margin-right: 10px;
+  padding: 8px 12px;
+}
+
+.application-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.application-table th, .application-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.application-table th {
+  background-color: #f2f2f2;
+}
+
+.application-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.application-table tr:hover {
+  background-color: #f1f1f1;
+}
+.welcome-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.title{
+  color:#f4895f;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: #333;
+}
+
+/* Hover effect for buttons */
+.filter-buttons button:hover {
+  background-color: #ffcbb7;
+  color: #000000;
+}
+
+/* Active button state (when selected) */
+.filter-buttons button.active {
+  background-color: #f4895f;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #f4895f;
+}

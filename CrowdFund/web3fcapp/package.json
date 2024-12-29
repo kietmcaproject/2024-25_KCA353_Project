@@ -1,0 +1,35 @@
+{
+  "name": "web3cfapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@thirdweb-dev/react": "^4.9.4",
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "ethers": "^5.7.2",
+    "next": "14.1.0",
+    "react": "^18.3",
+    "react-dom": "^18.3",
+    "thirdweb": "^5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "description": "![tw-banner](https://github.com/thirdweb-example/next-starter/assets/57885104/20c8ce3b-4e55-4f10-ae03-2fe4743a5ee8)",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
+}
