@@ -1,0 +1,96 @@
+/* Navbar Container */
+.header {
+  background-color: #f7fafc; /* Light grey background */
+  padding: 1rem 2rem; /* Adequate padding for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Keeps the navbar at the top */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation Bar Layout */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Prevents navbar from stretching too wide */
+  margin: 0 auto; /* Centers the navbar */
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between the logo and text */
+}
+
+.logoText {
+  font-size: 1.75rem; /* Slightly smaller font for compact layout */
+  font-weight: 700;
+  color: #2d3748; /* Dark grey for elegance */
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 1.5rem; /* Adequate spacing between links */
+}
+
+.navLink {
+  font-size: 1.125rem; /* Slightly larger text for better readability */
+  font-weight: 500;
+  color: #2d3748;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px; /* Slight rounding for hover effect */
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #fbbf24; /* Accent color for hover */
+  background-color: #edf2f7; /* Light grey background on hover */
+}
+
+/* Welcome Message */
+.welcomeMessage {
+  /* background-color: #fefcbf; Light yellow */
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1rem;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoSection {
+    margin-bottom: 1rem; /* Add space between logo and links */
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 1rem; /* Stack links vertically */
+  }
+
+  .navLink {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .welcomeMessage {
+    padding: 1rem;
+  }
+}

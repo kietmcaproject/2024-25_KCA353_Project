@@ -1,0 +1,89 @@
+/* Main Page Styles */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.text-gray-900 {
+  color: #1f2937;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Styling */
+.header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main {
+  padding: 48px 16px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #007b83;
+  margin-bottom: 32px;
+}
+
+.loading,
+.noData {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+/* Grid Styles for Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007b83;
+  margin-bottom: 12px;
+}
+
+.cardText {
+  font-size: 1.1rem;
+  color: #4b5563;
+}

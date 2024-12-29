@@ -1,0 +1,59 @@
+/* components/DonationCard.module.css */
+
+.card {
+    background-color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .imageContainer {
+    position: relative;
+    height: 180px;
+    width: 100%;
+  }
+  
+  .image {
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .cardContent {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 8px 0;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  
+  .donateButton {
+    background-color: #007B83;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .donateButton:hover {
+    background-color: #005F68;
+  }
+  
