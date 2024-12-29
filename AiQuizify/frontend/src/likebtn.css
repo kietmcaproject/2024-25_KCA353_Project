@@ -1,0 +1,63 @@
+.buttonLike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 22px 20px 22px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: white;
+  border-color:rgb(83, 3, 59) ;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 35px;
+  transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
+  border-color 400ms ease-in-out,
+  background-color 400ms ease-in-out;
+  word-spacing: -2px;
+  width:20px;
+  height: 20px;
+}
+
+
+
+.filled,
+.empty {
+  fill: rgb(83, 3, 59);
+  transition: opacity 100ms ease-in-out;
+}
+
+.filled {
+  position: absolute;
+  opacity: 70;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+button:hover .empty {
+  opacity: 0;
+  
+}
+
+.buttonLike:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
