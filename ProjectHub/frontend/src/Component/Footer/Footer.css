@@ -1,0 +1,75 @@
+.footer {
+    background-color: #1f2937; /* Base background color */
+    color: #ffffff; /* Base text color */
+    padding: 20px; /* Padding for the footer */
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.footer-nav {
+    margin-bottom: 15px; /* Space between nav and social links */
+}
+
+.quick-links {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.quick-links li {
+    display: inline; /* Display links in one row */
+    margin: 0 10px; /* Margin between links */
+}
+
+.quick-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffffff; /* Link color */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.quick-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+.social-links {
+    margin-bottom: 15px;
+     /* Space between social links and developer names */
+}
+
+.developer-names {
+    margin-bottom: 10px; /* Space between developer names and copyright */
+}
+
+aside {
+    font-size: 0.8em; /* Smaller font size for copyright */
+    color: #ffffff; /* Lighter color for copyright */
+}
+.icon-container{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.logo-container{
+    display: flex;
+    flex-direction: row;
+}
+.footer-arrenge{
+    display: flex;
+    gap:30%;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.footer-arrenge  img {
+    height: 50px;
+    
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .quick-links li {
+        display: block; /* Stack links on smaller screens */
+        margin: 5px 0; /* Margin between links */
+    }
+}

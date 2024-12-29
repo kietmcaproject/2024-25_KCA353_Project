@@ -1,0 +1,19 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.search-contain{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+/* justify-content: end; */
+align-items: center;
+
+}
+.add-btn-search {
+    /* width: 50px; */
+    margin: 0;
+    padding: 0;
+}
+
