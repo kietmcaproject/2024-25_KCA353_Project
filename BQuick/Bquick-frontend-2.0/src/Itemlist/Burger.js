@@ -1,0 +1,27 @@
+const Burger = [
+    {
+        "id": "Burger01",
+        "name": "Veg Burger",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Burger02",
+        "name": "Cheese Burger",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Burger03",
+        "name": "Paneer Cheese Burger",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Burger04",
+        "name": "Aloo Tikki Burger",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    }
+   
+]

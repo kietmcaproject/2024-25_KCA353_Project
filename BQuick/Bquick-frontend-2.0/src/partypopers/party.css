@@ -1,0 +1,25 @@
+/* styles.css */
+@keyframes explode {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .cracker {
+    position: fixed;
+    width: 60px; /* Adjust the size of the cracker */
+    height: 60px; /* Adjust the size of the cracker */
+    border-radius: 50%;
+    pointer-events: none; /* Ignore mouse events */
+    animation: explode 4s forwards;
+  }
+  

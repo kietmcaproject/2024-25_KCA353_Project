@@ -1,0 +1,32 @@
+const Bread = [
+    {
+        "id": "Bread01",
+        "name": "Cheese Garlic Bread",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Bread02",
+        "name": "Stuffed Garlic Bread",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Bread03",
+        "name": "Pocket Calzone",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Bread04",
+        "name": "Pocket Parcel[1 Pc]",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    },
+    {
+        "id": "Bread05",
+        "name": "Zingy Parcel[4 Pc]",
+        "image": "Onion Pizza.jpg",
+        "price": "100", 
+    }
+]
