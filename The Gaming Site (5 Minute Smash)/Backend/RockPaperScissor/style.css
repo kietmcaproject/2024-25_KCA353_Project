@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f06, #f79, #f93); /* Gradient background */
+    animation: gradientShift 8s ease infinite; /* Smooth background animation */
+    background-size: 400% 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    color: #fff;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.choice-display{
+    width: 50px;
+    height: 50px;
+}
+
+.choice {
+    margin: 0 15px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+}
+
+.scoreboard {
+    margin-top: 20px;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-weight: bold;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+img {
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: #0056b3;
+}
+
+/* For displaying choices */
+.player-choice, .computer-choice {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.choice-display {
+    margin: 0 20px;
+    width: 150px;
+    height: 150px;
+}
