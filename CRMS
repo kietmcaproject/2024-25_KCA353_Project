@@ -1,0 +1,20 @@
+Criminal Record Management System
+
+The Criminal Record Management System (CRMS) is a web-based application designed to efficiently manage and maintain criminal records for law enforcement agencies or legal institutions. Developed using the MERN stack (MongoDB, Express.js, React, and Node.js), this system offers a comprehensive solution for tracking, storing, and accessing information about individuals with criminal records.
+Features:
+User Authentication and Role Management:
+Secure login for admins, law enforcement officers, and authorized personnel.
+Role-based access control to ensure data privacy and security.
+
+Criminal Profile Management:
+Ability to create, read, update, and delete records.
+Storage of detailed information such as name, photo, fingerprints, aliases, crime history, and convictions.
+
+Case Management:
+Record details of criminal cases, including case numbers, investigation status, court verdicts, and sentencing.
+
+Search and Filter:
+Advanced search functionality to find records based on various parameters like name, case number, or location.
+
+Reports and Analytics:
+Generate detailed reports on crime trends, location-based statistics, and case outcomes.
